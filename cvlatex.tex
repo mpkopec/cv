@@ -1,0 +1,116 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+%% ModernCV themes
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\renewcommand{\familydefault}{\sfdefault}
+\nopagenumbers{}
+
+%% Character encoding
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+%% Adjust the page margins
+\usepackage[margin=2cm]{geometry}
+\setlength{\hintscolumnwidth}{3.5cm}
+
+%% Personal data
+\firstname{Maciej P.}
+\familyname{Kopeć}
+\address{Idalińska 18A/1}{26-600 Radom}
+\mobile{+48 515 083 938}
+\email{maciejpkopec@gmail.com}
+\extrainfo{Born in Iłża\\\\\underline{Address of~residence:}\\Brogi 40/107\\31-431 Kraków}
+\photo[80pt][0.4pt]{mkopec.jpg}
+
+%%------------------------------------------------------------------------------
+%% Content
+%%------------------------------------------------------------------------------
+\begin{document}
+\makecvtitle
+
+\section{Education}
+\cventry{2014--2015}{Master of Science}{\textbf{AGH-UST}}{\textbf{Cracow}}{}{Major: \textbf{Technical Physics} at~Faculty of~Physics and~Applied Computer Science}
+\cventry{2010--2014}{Bachelor of Science}{\textbf{AGH-UST}}{\textbf{Cracow}}{\textit{4.5}}{Major: \textbf{Technical Physics} at~Faculty of~Physics and~Applied Computer Science}
+\cvitemwithcomment{2007--2010}{4\textsuperscript{th} High School, Radom}{Specialization: mathematics and~physics}
+
+\section{Professional experience}
+\cvitemwithcomment{January 2014 -- \linebreak June 2014}{Woodward Poland sp. z o.o.}{Hardware development intern}
+\cvlistitem{Electrical circuit design.}
+\cvlistitem{Reworking and~servicing PCB prototypes (e.g. soldering under a~microscope, test setup preparation).}
+\cvlistitem{Measurements and~data analysis.}
+\cvlistitem{RoHS directive compliance verification.}
+
+\cvitemwithcomment{July 2013 -- \linebreak August 2013}{Faculty of~Physics and~Applied Computer Science}{Electrical engineering trainee}
+\cvlistitem{Programming microcontrollers with ARM Cortex-M3 core.}
+\cvlistitem{ADC chip parameters measurement.}
+
+\cvitemwithcomment{2007 -- 2012}{Freelance}{Web programmer}
+\cvlistitem{Creating web applications and websites for private customers
+and companies.}
+
+\cvitemwithcomment{August 2011 -- January 2012}{Afresh Media sp. z o. o.}{Web programmer}
+\cvlistitem{Creating, modifying and designing web solutions for company’s clients.}
+
+\cvitemwithcomment{2010 -- 2012}{AGH Students Council}{Web programmer}
+\cvlistitem{Creating, maintenance and modifying various websites and web
+applications.}
+
+\cvitemwithcomment{2007 -- 2010}{4\textsuperscript{th} High School in~Radom}{Website administrator}
+\cvlistitem{Responsibility of creating, updating and maintenance of school’s web
+page.}
+
+\section{Projects and~designs}
+\cvitemwithcomment{2014--2015}{Control interface for SALT ASIC for LHCb detector\\ tracker upgrade\hspace{-3cm}}{Master thesis}
+\cvlistitem{Hardware I\textsuperscript{2}C interface implementation in Verilog. (Work in progress)}
+\pagebreak
+\cvitemwithcomment{2014}{Analog filter measurement automation software}{University project}
+\cvlistitem{RS-232 based software written in~Python to~automate analog filter measurements. Currently beta version. Will be used as~a~part of~the~Electronics lab for third year students.}
+
+\cvitemwithcomment{2014}{Demo application for colour touchscreen working\\ in embedded system\hspace{-3cm}}{Bachelor thesis}
+\cvlistitem{Design and~implementation of~GUI library for~LPC1768 microcotroller with a~demo application.}
+
+\cvitemwithcomment{2014}{PS/2 driver in~Verilog}{University project}
+\cvlistitem{Design, implementation, synthesis and~simulation of~simple PS/2 driver in~Verilog.}
+
+\cvitemwithcomment{2013}{Binary signed multiplication design}{University project}
+\cvlistitem{Design, implementation, synthesis and~simulation of~binary multiplication using I~variant of~Booth algorithm.}
+
+\cvitemwithcomment{2013}{Digital to~analog converter}{University project}
+\cvlistitem{Parallel loaded, resistor ladder based, 8-bit DAC with nonlinearities less than 0.5~LSB, including temperature sweep and~Monte Carlo simulations.}
+
+\cvitemwithcomment{2013}{16x4 bit SRAM}{Hobbystic project}
+\cvlistitem{16x4 or 16x8 bit SRAM with address counter design. A~part of~future LED matrix project (driver for~this matrix).}
+
+\cvitemwithcomment{2013}{Operation amplifier}{University project}
+\cvlistitem{Miller's configuration operation amplifier design with over 20\hspace{2pt}000 open-loop gain and~about 1\hspace{3pt}MHz~bandwidth.}
+
+\cvitemwithcomment{2013}{Simple evaluation board for~ATmega8}{Hobbystic project}
+\cvlistitem{Construction and~soldering of~simple, modular evaluation board with voltage stabilisation (Zener diode), 7-segment LED display, buttons etc.}
+
+\section{Languages}
+
+\cvitemwithcomment{English}{Fluent (FCE)}{}
+\cvitemwithcomment{Russian}{Basic -- currently learning}{}
+
+\section{Other skills}
+
+\cvitemwithcomment{Programming languages}{C/C++, Python, Verilog, SQL, PHP MATLAB (basic), Simulink(basic)}{}
+\cvitemwithcomment{Design software}{EAGLE 6 (schematic and~layout), DxDesigner and~Expedition PCB\newline (more than basic), Cadence (Schematic, ADE, Layout, digital simulation),\\ LtSPICE, Xilinx ISE}{}
+\cvitemwithcomment{Other software and~technologies}{Linux, \LaTeX, git, Wordpress, MS Office}{}
+\cvitemwithcomment{Additional qualifications}{SEP 1\hspace{3pt}kV~license, driving license, good knowledge of~circuits and~signals\\ theory, coping with analytical problems}{}
+
+\section{Interests}
+
+\cvlistitem{books, snooker, e-sports, cycling trips, physics.}
+
+\section{Disclaimer}
+
+I hereby authorize you to process my personal data included in my job application for
+the needs of the recruitment process in accordance with the Personal Data
+Protection Act dated 29.08.1997 (uniform text: Journal of Laws of the Republic of
+Poland 2002 No 101, item 926 with further amendments)
+
+
+\bibliography{publications}
+\end{document}
