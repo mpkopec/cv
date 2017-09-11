@@ -1,15 +1,21 @@
 % !TeX spellcheck = en_US
 \documentclass[11pt,a4paper,sans]{moderncv}
 
-%% ModernCV themes
-\moderncvstyle{classic}
-\moderncvcolor{blue}
-\renewcommand{\familydefault}{\sfdefault}
-\nopagenumbers{}
-
 %% Character encoding
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+
+%% ModernCV themes
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+%\renewcommand{\familydefault}{\sfdefault}
+\nopagenumbers{}
+
+% Japanese
+\usepackage{CJKutf8}
+
+% Russian
+%\usepackage[russian]{babel}
 
 %% Adjust the page margins
 \usepackage[margin=2cm]{geometry}
@@ -20,10 +26,9 @@
 %% Personal data
 \firstname{Maciej P.}
 \familyname{Kopeć}
-\address{Idalińska 18A/1}{26-600 Radom}
+\address{Na Popielówkę 75P/2}{32-087 Zielonki}
 \mobile{+48 515 083 938}
-\email{maciejpkopec@gmail.com}
-\extrainfo{Born in Iłża\\\\\underline{Address of~residence:}\\ Brogi 40/107\\31-431 Kraków\\Poland}
+\email{maciej.p.kopec@gmail.com}
 %\photo[80pt][0.4pt]{mkopec.jpg}
 
 %%------------------------------------------------------------------------------
@@ -36,75 +41,75 @@
 \cventry{2015--2016}{PhD}{AGH-UST}{Cracow}{}{Major: \textbf{Physics} at Faculty of Physics and Applied Computer Science}
 \cventry{2014--2015}{MSc}{\textbf{AGH-UST}}{\textbf{Cracow}}{5.0}{Major: \textbf{Technical Physics} at~Faculty of~Physics and~Applied Computer Science}
 \cventry{2010--2014}{BSc}{\textbf{AGH-UST}}{\textbf{Cracow}}{\textit{4.5}}{Major: \textbf{Technical Physics} at~Faculty of~Physics and~Applied Computer Science}
-\cvitemwithcomment{2007--2010}{4\textsuperscript{th} High School, Radom}{Specialization: mathematics and~physics}
 
 \section{Professional experience}
-\cvitemwithcomment{December 2014 -- \linebreak present}{National Synchrotron Radiation Centre ``Solaris''}{Beam instrumentation and diagnostics specialist}
-\vspace{-\baselineskip}
+\cventry{December 2014 -- \linebreak present}{Beam diagnostics and Instrumentation Specialist}{National Synchrotron Radiation Centre `Solaris'}{}{}{}
 \cvlistitem{Electronic readout and measurement systems design.}
 \cvlistitem{Design for manufacture and cases.}
 \cvlistitem{Electronic prototyping.}
 \cvlistitem{Electrical reworking.}
 \cvlistitem{Beam instrumentation diagnostics and assembly.}
-\cvlistitem{Beam diagnostic equipment design and maintenance}
+\cvlistitem{Beam diagnostic equipment design and maintenance.}
 
-\cvitemwithcomment{May 2016 -- \linebreak August 2016}{Organisation Européenne pour la Recherche Nucléaire (CERN)}{Embedded systems developer}
-\vspace{-\baselineskip}
+\cventry{May 2016 -- \linebreak August 2016}{Embedded systems developer}{Organisation Européenne pour la Recherche Nucléaire (CERN)}{}{}{}
 \cvlistitem{Development of 1G ethernet link on ZC706 evaluation board \newline using Zynq SoC}
 \cvlistitem{Detector readout systems testing and debugging}
 \cvlistitem{Setting up development environments for detector readout systems}
 
-\cvitemwithcomment{January 2014 -- \linebreak June 2014}{Woodward Poland sp. z o.o.}{Hardware development intern}
+\cventry{January 2014 -- \linebreak June 2014}{Hardware development intern}{Woodward Poland sp. z o.o.}{}{}{}
 \vspace{-\baselineskip}
 \cvlistitem{Electrical circuit design.}
 \cvlistitem{Reworking and~servicing PCB prototypes (e.g. soldering under a~microscope, test setup preparation).}
 \cvlistitem{Measurements and~data analysis.}
 \cvlistitem{RoHS directive compliance verification.}
 
-\cvitemwithcomment{July 2013 -- \linebreak August 2013}{Faculty of~Physics and~Applied Computer Science}{Electrical engineering trainee}
+\cventry{July 2013 -- \linebreak August 2013}{Electrical engineering trainee}{Faculty of~Physics and~Applied Computer Science}{}{}{}
 \vspace{-\baselineskip}
 \cvlistitem{Programming microcontrollers with ARM Cortex-M3 core.}
 
+\cventry{2008--2013}{Web-developer}{Back-end and front-end web development}{}{}{}
+\cvlistitem{Preparing graphic files for HTML and CSS coding.}
+\cvlistitem{HTML, CSS and jQuery front-end development.}
+\cvlistitem{Preparing custom templates for Wordpress.}
+\cvlistitem{Writing plugins and snippets for CMS systems(Wordpress, Joomla).}
+
 \section{Courses and certificates}
 
-\mycvitemwithcomment{Until December 2016}{Advanced Hardware Design \hspace{-7.5cm}}{FEDEVEL~Academy}
-\mycvitemwithcomment{Until December 2016}{Advanced PCB Layout Course}{FEDEVEL~Academy}
-\mycvitemwithcomment{Until December 2016}{Learn Altium Essentials}{FEDEVEL~Academy}
+\mycvitemwithcomment{In progress}{Advanced Hardware Design \hspace{-7.5cm}}{FEDEVEL~Academy}
+\vspace{-.5\baselineskip}
+\mycvitemwithcomment{In progress}{Advanced PCB Layout Course}{FEDEVEL~Academy}
+\vspace{-.5\baselineskip}
+\mycvitemwithcomment{December 2016}{Learn Altium Essentials}{FEDEVEL~Academy}
 \mycvitemwithcomment{April 2016}{PCB design at RF --- multi-Gigabit transmission, EMI control and PCB materials}{Cadence GmbH}
 \mycvitemwithcomment{April 2016}{Essential high-speed PCB design for signal integrity}{Cadence GmbH}
+\vspace{-.5\baselineskip}
+
+\section{Last year publications}
+\subsection{As a~corresponding author}
+\cvlistitem{\emph{Universal digital aggregator for in-line signal processing}, M.P. Kopeć et~al., IPAC 2017}
+
+\subsection{As a~co-author}
+\cvlistitem{\emph{Performance of Solaris storage ring}, A.I. Wawrzyniak et~al., IPAC 2017}
+\cvlistitem{\emph{Beta function measurement in the Solaris storage ring}, A. Kisiel et~al., IPAC 2017}
 
 \section{University and private projects and~designs}
-\cvitemwithcomment{October 2014 -- January 2015}{Free fall measurement device}{University project}
-\vspace{-\baselineskip}
-\cvlistitem{Atmega8 based custom PCB designed to measure free fall dynamics using LEDs and phototransistors. Data is~acquired by an~internal 10-bit SAR ADC and~then sent to~a~PC via RS-232 port.}
-\cvlistitem{Fully functional revision 1.}
-\cvlistitem{Revision 2 hardware prototyping in progress.}
-
-\cvitemwithcomment{July 2014 --\\ September 2015}{Control interface for SALT ASIC for LHCb detector\protect\\
- tracker upgrade\hspace{-3cm}}{Master thesis}
+\cventry{July 2014 -- \\Sptember 2015}{Master thesis}{}{}{}{{\large Subject: Control interface for SALT ASIC for LHCb detector tracker upgrade}}
 \cvlistitem{Hardware I\textsuperscript{2}C interface implementation in Verilog.}
 
-\cvitemwithcomment{December 2013 -- January 2014}{PS/2 driver in~Verilog}{University project}
-\vspace{-\baselineskip}
-\cvlistitem{Design, implementation, synthesis and~simulation of~simple PS/2 driver in~Verilog.}
-
-\cvitemwithcomment{October 2013 -- December 2013}{Digital to~analog converter}{University project}
-\vspace{-\baselineskip}
-\cvlistitem{Parallel loaded, resistor ladder based, 8-bit DAC with nonlinearities less than 0.5~LSB, simulations included temperature sweep and~Monte Carlo simulations.}
-
-\cvitemwithcomment{July 2013 -- \\ October 2013}{Demo application for colour touchscreen \newline working in embedded system\hspace{-4cm}}{Bachelor\\ thesis}
+\cventry{July 2013 -- \\ October 2013}{Bachelor thesis}{}{}{}{{\large Subject: Demo application for colour touchscreen working in embedded system}}
 \cvlistitem{Design and~implementation of~GUI library for~LPC1768 microcotroller with a~demo application.}
 
 \section{Languages}
 
 \cvitemwithcomment{English}{Fluent (FCE)}{}
-\cvitemwithcomment{Russian}{Basic}{}
+\cvitemwithcomment{Russian/}{Basic}{}
+\cvitemwithcomment{Japanese/\begin{CJK}{UTF8}{min}日本語\end{CJK}}{Basic}{Learning in progress}
 
 \section{Other skills}
 
-\cvitemwithcomment{\parbox{0.2\textwidth}{\vspace{-\baselineskip}\flushright Programming languages}}{\parbox{13cm}{C, C++ (basic), Python, Verilog, VHDL, SQL (more than basic), MATLAB (basic), Simulink(basic)}}{}
+\cvitemwithcomment{\parbox{0.2\textwidth}{\vspace{-\baselineskip}\flushright Programming languages}}{\parbox{13cm}{C, C++ (basic), Python, Verilog, SystemVerilog, VHDL, SQL (more than basic), MATLAB (basic), Simulink(basic)}}{}
 \vspace{0.5\baselineskip}
-\cvitemwithcomment{Design software}{\parbox{13cm}{KiCad, EAGLE 6 (schematic and~layout), LTspice IV, Xilinx ISE, Xilinx Vivado (more than basic), Xilinx SDK (basic), Keil uVision, Atmel Studio, Eclipse}}{}
+\cvitemwithcomment{Design software}{\parbox{13cm}{KiCad, EAGLE 6 (schematic and~layout), Altium Designer, LTspice IV, Xilinx ISE, Xilinx Vivado (more than basic), Xilinx SDK (basic), Keil uVision, Atmel Studio, Eclipse}}{}
 \vspace{0.5\baselineskip}
 \cvitemwithcomment{\parbox{0.2\textwidth}{\vspace{-\baselineskip}\flushright Other software and~technologies}}{\parbox{13cm}{Linux, \LaTeX, git, Wordpress, MS Office}}{}
 \vspace{0.5\baselineskip}
@@ -112,7 +117,7 @@
 
 \section{Interests}
 
-\cvlistitem{books, snooker, e-sports, cycling trips, physics.}
+\cvlistitem{volleyball, cycling, books, snooker, e-sports, physics.}
 
 \section{Disclaimer}
 
