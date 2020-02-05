@@ -5,8 +5,24 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
+% Uncomment only one font
+%\usepackage[default]{comfortaa}
+%\usepackage[sfdefault]{ClearSans}
+%\usepackage[sfdefault]{roboto}
+\usepackage{paratype}
+\usepackage[T1]{fontenc}
+\renewcommand\familydefault{\sfdefault}
+\usepackage{noindentafter}
+\pagestyle{empty}
+
 % URLs
 \usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	linkcolor=black,
+	citecolor=black,
+	urlcolor=black
+}
 
 % Japanese
 \usepackage{CJKutf8}
@@ -17,11 +33,129 @@
 %% Adjust the page margins
 \usepackage[margin=1.8cm]{geometry}
 
-% Counters and iterables
+% Counters, iterables, ifs
 \usepackage{etoolbox}
+\usepackage{xifthen}
 
+% Horizontal lines
+\newcommand{\fullhorline}[1]{\noindent\makebox[\linewidth]{\rule{\paperwidth}{#1}}}
+\newcommand{\twhorline}[1]{\noindent\makebox[\linewidth]{\rule{\textwidth}{#1}}}
+
+\makeatletter
+\def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
+\makeatother
+
+% Formatting sections
+\usepackage{titlesec}
+\titleformat{\section}{\vspace{-\baselineskip}\bfseries\LARGE}{}{0pt}{}[]
+
+% CV commands
+\newcommand{\cvedudateitem}[6]{
+	
+	\noindent
+	\begin{minipage}[t]{0.2\linewidth}
+		#1
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.78\linewidth}
+		{\bfseries #2} | #3 | #4\\
+		\textbf{#5} | Thesis: \emph{#6}
+	\end{minipage}
+	\vspace{1\baselineskip}
+
+%	\hfill{\vrule width 1pt}\hfill
+%	\begin{minipage}[t]{.92\linewidth}
+%		\textbf{#5}, Thesis: \emph{#6}
+%	\end{minipage}
+%	\vspace{1\baselineskip}
+}
+
+\newcommand{\cvexpdateslimitem}[3]{
+	
+	\noindent
+	\begin{minipage}[t]{0.22\linewidth}
+		#1
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.76\linewidth}
+		{\bfseries #2} | #3
+	\end{minipage}
+	\vspace{.35\baselineskip}
+	
+}
+
+\newcommand{\cvexpdateitem}[4]{
+\ifthenelse{\isempty{#4}}
+		{\cvexpdateslimitem{#1}{#2}{#3}}{
+			
+		\noindent
+		\begin{minipage}[t]{0.21\linewidth}
+			#1
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.766\linewidth}
+			{\bfseries #2} | #3
+		\end{minipage}
+		
+		\vspace{0.35\baselineskip}
+		\hfill{\vrule width 1pt}\hfill
+		\begin{minipage}[t]{.92\linewidth}
+			#4
+		\end{minipage}
+		\vspace{1\baselineskip}
+}}
+
+\newcommand{\cvexpdatecompactitem}[4]{
+	\ifthenelse{\isempty{#4}}
+		{\cvexpdateslimitem{#1}{#2}{#3}}{
+			
+		\noindent
+		\begin{minipage}[t]{0.21\linewidth}
+			#1
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.766\linewidth}
+			{\bfseries #2} | #3
+		\end{minipage}
+		
+		\vspace{0.35\baselineskip}
+		\hfill{\vrule width 1pt}\hfill
+		\begin{minipage}[t]{.92\linewidth}
+			#4
+		\end{minipage}
+		\vspace{.35\baselineskip}
+}}
+
+\newcommand{\cvartitem}[3]{
+	
+	\noindent
+	\begin{minipage}[t]{0.21\linewidth}
+		#1
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.766\linewidth}
+		#2\ifthenelse{\isempty{#3}}{}{, \emph{#3}}
+	\end{minipage}
+	\vspace{.35\baselineskip}
+}
+
+\newcommand{\cvskillsitem}[2]{
+	
+	\noindent
+	\begin{minipage}[t]{0.21\linewidth}
+		\vfill#1\vfill
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.766\linewidth}
+		\vfill#2\vfill
+	\end{minipage}
+	\vspace{.35\baselineskip}
+}
+
+% Job title list
 \listcsgadd{JobTitleList}{Electronics Engineer}
 \listcsgadd{JobTitleList}{Embedded software and FPGA enthusiast}
+\listcsgadd{JobTitleList}{MSc in Technical Physics}
 
 %% Personal data
 \newcommand{\firstname}{Maciej Paweł}
@@ -29,19 +163,221 @@
 
 \newcommand{\address}{Na Popielówkę 75P/2, 32-087 Zielonki, Poland}
 \newcommand{\mobile}{+48 515 083 938}
-\newcommand{\email}{maciej.p.kopec@gmail.com}
-%\newcommand{\github}{\href{https://github.com/mpkopec}{mpkopec}}
-%\newcommand{\linkedin}{\href{https://www.linkedin.com/in/maciej-kope%C4%87-46735595/}{Maciej Kopeć}}
-%\includegraphics[height=1em, trim={4.8cm 14.55cm 12.76cm 1.95cm}, clip]
-%{img/GitHub-Mark.eps}
-%\photo[80pt][0.4pt]{mkopec.jpg}
+\newcommand{\email}{maciej.p.kopec [at] gmail.com}
+\newcommand{\github}{\href{https://github.com/mpkopec}{mpkopec}}
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/maciej-kope\%C4\%87-46735595/}{Maciej Kopeć}}
 
 %%------------------------------------------------------------------------------
 %% Content
 %%------------------------------------------------------------------------------
 \begin{document}
+	% Begin header part
+	\begin{center}
+		% Name and familyname
+		{\Huge \firstname \space \bfseries \familyname}
+		\vspace{1\baselineskip}
+		%\twhorline{1pt}
+		
+		% Printing job title list
+		\large
+		\renewcommand*{\do}[1]{$\bullet$ #1 }
+		\dolistcsloop{JobTitleList}$\bullet$
+		\vspace{0.2\baselineskip}
+		\twhorline{1pt}
+		
+		% Contact info
+		\vspace{0.25\baselineskip}
+		\includegraphics[height=0.8em]{img/icons8-home-96.png}
+		\address \space |
+		\includegraphics[height=0.8em]{img/icons8-envelope-96.png}
+		\email \\
+		
+		\includegraphics[height=0.8em]{img/icons8-iphone-96.png}
+		\mobile \space |
+		\includegraphics[height=0.8em]{img/icons8-github-96.png}
+		\github \space |
+		\includegraphics[height=0.8em]{img/icons8-linkedin-96.png}
+		\linkedin
+		
+		\twhorline{1pt}
+		
+	\end{center}
+	
+	\section{Education}	
+	\cvedudateitem
+		{2014 -- 2015}
+		{Technical Physics}
+		{Faculty of~Physics and~Applied Computer Science}
+		{AGH-UST}
+		{Master of Science}
+		{Control interface for SALT ASIC for LHCb detector tracker upgrade}
+	\cvedudateitem
+		{2010 -- 2014}
+		{Technical Physics}
+		{Faculty of~Physics and~Applied Computer Science}
+		{AGH-UST}
+		{Bachelor of Science}
+		{Demo application for colour touchscreen working in embedded system}
+		
+	\section{Work experience}
+	\cvexpdateitem
+		{Apr 2019 -- present}
+		{Electronics Engineer}
+		{Merit Poland~sp.~z~o.o.}
+		{At Merit, my current responsibilities include: designing electronic circuits for automotive purposes;
+			electrical simulations and data analysis (including scripting); component database maintenance
+			and development; ECAD tools integration process; tests and measurements of the designed circuits
+			and supporting and mentoring interns.}
+		
+	\cvexpdateitem
+		{Jan 2018 -- Mar 2019}
+		{Electronics Engineer}
+		{Sii Poland~sp.~z~o.o.}
+		{At Sii I was delegated to work as a contractor in Merit Poland sp.~z~o.o. There I was
+			responsible for designing electronic circuits for automotive purposes;
+			electrical simulations and data analysis (including scripting); component database maintenance
+			and development; ECAD tools integration process; tests and measurements of the designed circuits;
+			supporting and mentoring interns.}
+		
+	\cvexpdateitem
+		{Dec 2014 -- Dec 2017}
+		{Beam diagnostics and Instrumentation Specialist}
+		{National Synchrotron Radiation Centre `Solaris'}
+		{At NSRC `Solaris' my tasks covered: designing electronic readout and measurement
+		systems; electronic prototyping and reworks; beam instrumentation design, assembly, maintenance
+		(including scripting, setup, etc.) and diagnostics; beam diagnostic data analysis; electronic 
+		simulations and data analysis.}
+	
+	\cvexpdateitem
+		{May 2016 -- Aug 2016}
+		{Embedded systems developer}
+		{Organisation Européenne pour la Recherche Nucléaire (CERN)}
+		{At CERN I was tasked with: development of 1G ethernet link on ZC706 evaluation board;
+		detector readout systems testing and debugging and setting up development environments for
+		detector readout systems.}
+	
+	\cvexpdateitem
+		{Jan 2014 -- Jun 2014}
+		{Hardware development intern}
+		{Woodward Poland~sp.~z~o.o.}
+		{As an intern at Woodward Poland, I was working on: electrical circuit design (including
+		PCB design); testing and preparing prototypes; measurements and data analysis, as well as
+		RoHS directive compliance verification.}
+	
+	\cvexpdateitem
+		{Jul 2013 -- Aug 2013}
+		{Electrical engineering trainee}
+		{Faculty of~Physics	and~Applied Computer Science}
+		{During compulsory trainee program at the Faculty I was assigned a task of programming 
+		microcontrollers with ARM Cortex-M3 core.}
+	
+	\cvexpdateitem
+		{2008 -- 2013}
+		{Web-developer}
+		{Back-end and front-end web development}
+		{As a web developer I was working on: HTML, CSS and jQuery front-end design; preparing
+		custom Wordpress templates; writing plugins and snippets for Joomla! and Wordpress systems
+		and developing independent back-end applications in PHP and MySQL.}
+	
+	\section{Skills}
+	\cvskillsitem
+	{Programming\\languages}
+	{C, Python, Verilog, SQL (more than basic), MATLAB (basic), Simulink(basic),
+	Bash}
+	
+	\cvskillsitem
+	{Design\\software}
+	{KiCad, Altium Designer, Mentor Xpedition, LTspice IV, Xilinx
+	Vivado (more than basic), Xilinx Vitis (basic), Eclipse}
+	
+	\cvskillsitem
+	{Other technologies}
+	{Linux, \LaTeX, git, Wordpress, MS Office, Vim}
+	
+	\cvskillsitem
+	{Additional qualifications}
+	{SEP 1\hspace{3pt}kV~license (30\hspace{3pt}kV for laboratory testing), 
+	driving license, good knowledge of~circuits and~signals theory, 
+	analytical thinking}
+	
+	\section{Languages}
+	\cvartitem{English}{Fluent}{FCE passed in 2007}
+	\cvartitem{Russian}{Basic}{}
+	\cvartitem{Japanese}{Semi-intermediate}{currently learning}
+	
+	\section{Courses and certificates}	
+	\cvexpdatecompactitem
+		{In progress}
+		{FEDEVEL~Academy}
+		{Advanced PCB Layout Course}
+		{}
 
-\renewcommand*{\do}[1]{#1 }
-\dolistcsloop{JobTitleList}
+
+	\cvexpdatecompactitem
+		{Nov 2018}
+		{EMC for automotive}
+		{EMC Solution}
+		{}
+	
+	\cvexpdatecompactitem
+		{Oct 2017}
+		{Advanced Hardware Design}
+		{FEDEVEL~Academy}
+		{}
+	
+	\cvexpdatecompactitem
+		{Jun 2017}
+		{Accelerator Power Electronics Engineering}
+		{US Particle Accelerator School}
+		{The course was concluded with an exam graded \emph{excellent}.}
+	
+	\cvexpdatecompactitem
+		{Jun 2017}
+		{Pulsed Power Engineering}
+		{US Particle Accelerator School}
+		{The course was concluded with an exam graded \emph{outstanding}.}
+	
+	\cvexpdatecompactitem
+		{Dec 2016}
+		{Learn Altium Essentials}
+		{FEDEVEL~Academy}
+		{}
+	
+	\cvexpdatecompactitem
+		{Apr 2016}
+		{PCB design at RF --- multi-Gigabit transmission, EMI control and PCB materials}
+		{Cadence}
+		{}
+		
+	\cvexpdatecompactitem
+		{Apr 2016}
+		{Essential high-speed PCB design for signal integrity}
+		{Cadence}
+		{}
+		
+	\section{Recent publications}
+	\cvartitem
+		{IPAC 2017}
+		{M.P. Kopeć et~al.}
+		{Universal digital aggregator for in-line signal processing}
+	
+	\cvartitem
+		{IPAC 2017}
+		{A.I. Wawrzyniak et~al.}
+		{Performance of Solaris storage ring}
+
+	\cvartitem
+		{IPAC 2017}
+		{A. Kisiel et~al.}
+		{Beta function measurement in the Solaris storage ring}
+	
+	\section{Disclaimer}
+	I agree to the processing of personal data provided in this document for 
+	realising the recruitment process pursuant to the Personal Data Protection Act 
+	of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with 
+	Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 
+	April 2016 on the protection of natural persons with regard to the processing 
+	of personal data and on the free movement of such data, and repealing Directive 
+	95/46/EC (General Data Protection Regulation).
 	
 \end{document}
