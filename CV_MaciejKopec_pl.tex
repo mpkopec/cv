@@ -1,0 +1,119 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+%% ModernCV themes
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\renewcommand{\familydefault}{\sfdefault}
+\nopagenumbers{}
+
+%% Character encoding
+\usepackage[utf8]{inputenc}
+\usepackage[MeX]{polski}
+\usepackage{graphicx}
+
+%% Adjust the page margins
+\usepackage[margin=2cm]{geometry}
+\setlength{\hintscolumnwidth}{3.5cm}
+
+%% Personal data
+\firstname{Maciej P.}
+\familyname{Kopeć}
+\address{Idalińska 18A/1}{26-600 Radom}
+\mobile{+48 515 083 938}
+\email{maciejpkopec@gmail.com}
+\extrainfo{Urodzony w~Iłży\\\\\underline{Adres do~korespondencji:}\\Brogi 40/107\\31-431 Kraków}
+\photo[80pt][0.4pt]{mkopec.jpg}
+
+%%------------------------------------------------------------------------------
+%% Content
+%%------------------------------------------------------------------------------
+\begin{document}
+\makecvtitle
+
+\section{Edukacja}
+\cventry{2014--2015}{Magister}{Akademia Górniczo\dywiz{}Hutnicza}{\textbf{Kraków}}{}{Kierunek: \textbf{Fizyka Techniczna} na~Wydziale Fizyki i~Informatyki Stosowanej}
+\cventry{2010--2014}{Inżynier}{Akademia Górniczo\dywiz{}Hutnicza}{\textbf{Kraków}}{}{Kierunek: \textbf{Fizyka Techniczna} na~Wydziale Fizyki i~Informatyki Stosowanej}
+\cvitemwithcomment{2007--2010}{IV Liceum Ogólnokształcące, Radom}{Profil matematyczno\dywiz{}fizyczny}
+
+\section{Doświadczenie zawodowe}
+\cvitemwithcomment{Grudzień 2014 -- obecnie}{Narodowe Centrum Promieniowania\\ Synchrotronowego SOLARIS\hspace{-5cm}}{Specjalista ds.~diagnostyki i~oprzyrządowania wiązki}
+\cvlistitem{Projektowanie sprzętu elektronicznego na~potrzeby synchrotronu.}
+\cvlistitem{Utrzymanie istniejącego sprzętu i~systemów.}
+
+\cvitemwithcomment{Styczeń 2014 -- \linebreak Czerwiec 2014}{Woodward Poland sp. z o.o.}{Stażysta w~dziale rozwoju sprzętu}
+\cvlistitem{Projektowanie układów elektronicznych.}
+\cvlistitem{Poprawki i~zmiany w~prototypowych płytach PCB (m.~in.~lutowanie pod~mikroskopem, przygotowanie egzemplarzy testowych).}
+\cvlistitem{Pomiary i~analiza danych.}
+\cvlistitem{Weryfikacja zgodności z~dyrektywą RoHS.}
+
+\cvitemwithcomment{Lipiec 2013 -- \linebreak Sierpień 2013}{Wydział Fizyki i~Informatyki Stosowanej}{Praktykant w~Zespole Elektroniki Jądrowej}
+\cvlistitem{Programowanie mikrokontrolera LPC1768 (ARM Cortex-M3).}
+\cvlistitem{Pomiary prototypu układu scalonego ADC.}
+
+\cvitemwithcomment{2007 -- 2012}{Freelance}{Programista stron internetowych}
+\cvlistitem{Tworzenie i~utrzymanie stron internetowych dla klientów indywidualnych i~firm.}
+
+\cvitemwithcomment{Sierpień 2011 -- Styczeń 2012}{Afresh Media sp. z o. o.}{Programista stron internetowych}
+\cvlistitem{Tworzenie, modyfikacja i~utrzymanie aplikacji internetowych dla~klientów firmy.}
+
+\cvitemwithcomment{2010 -- 2012}{URSS AGH}{Programista stron internetowych}
+\cvlistitem{Tworzenie, modyfikacja i~utrzymanie aplikacji i~stron internetowych URSS AGH}
+
+\cvitemwithcomment{2007 -- 2010}{IV Liceum Ogólnokształcące w~Radomiu}{Administrator strony internetowej}
+\cvlistitem{Utrzymanie i~modyfikacja szkolnej strony internetowej}
+
+\pagebreak
+\section{Zrealizowane projekty}
+\cvitemwithcomment{2014--2015}{Interfejs kontrolny układu scalonego SALT dla \\upgrade’u detektora śladów eksperymentu LHCb\hspace{-6cm}}{Praca magisterska}
+\cvlistitem{Sprzętowa implementacja protokołu I\textsuperscript{2}C za~pomocą języka Verilog.}
+
+\cvitemwithcomment{2015}{Prosta aplikacja demonstracyjna systemu operacyjnego\\ czasu rzeczywistego FreeRTOS\hspace{-4.5cm}}{Projekt uczelniany}
+\cvlistitem{Palikacja demonstrująca niskopoziomowe zrównoleglenie zadań na~mikrokontrolerze LPC1768.}
+
+\cvitemwithcomment{2014}{Aplikacja automatyzująca pomiary filtrów analogowych}{Projekt uczelniany}
+\cvlistitem{Aplikacja w~języku Python do~automatyzacji pomiarów charakterystyk filtrów analogowych, korzystająca z~protokołu RS-232. Obecnie w~wersji beta.}
+
+\cvitemwithcomment{2014}{Aplikacja demonstracyjna dla kolorowego wyświetlacza \\ dotykowego pracującego w systemie wbudowanym\hspace{-8cm}}{Praca inżynierska}
+\cvlistitem{Projekt i~implementacja biblioteki obsługi GUI dla mikrokontrolera LPC1768 wraz z~aplikacją demontracyjną dla~stworzonej biblioteki.}
+
+\cvitemwithcomment{2014}{Sterownik portu PS/2}{Projekt uczelniany}
+\cvlistitem{Projekt, implementacja i~synteza układu prostego sterownika portu PS/2 napisanego w~języku Verilog.}
+
+\cvitemwithcomment{2013}{Implementacja układu mnożenia binarnego ze~znakiem}{Projekt uczelniany}
+\cvlistitem{Projekt, implementacja i~synteza układu mnożenia binarnego liczb ze~znakiem w~języku Verilog za~pomocą I~wariantu algorytmu Booth'a.}
+
+\cvitemwithcomment{2013}{Przetwornik cyfrowo-analogowy}{Projekt uczelniany}
+\cvlistitem{Ładowany równolegle, oparty o~drabinkę rezystorową, 8-bitowy przetwornik C/A. Błędy nieliniowości mniejsze od 0.5~LSB, również w symulacjach temperaturowych i~Monte Carlo.}
+
+%\cvitemwithcomment{2013}{16x4 bit SRAM}{Projekt hobbystyczny}
+%\cvlistitem{Projekt statycznej pamięci RAM o~komórce 4-~lub~8-bitowej. Zawiera licznik adresu (Część sterownika matrycy LED).}
+
+\cvitemwithcomment{2013}{Wzmacniacz operacyjny}{Projekt uczelniany}
+\cvlistitem{Wzmacniacz operacyjny w~konfiguracji Millera. Wzmocnienie w~otwartej pętli~$\geq$~20~000, pasmo~1~MHz.}
+
+\cvitemwithcomment{2013}{Prosta płytka uruchomieniowa dla~mikrokontrolera\\ ATmega8 \hspace{-1cm}}{Projekt hobbystyczny}
+\cvlistitem{Konstrukcja prostej płytki uruchomieniowej ze~stabilizacja bazującą na~diodzie Zenera i~modułami wyśiwietlacza 7-segmentowego, klawiatury, itd.}
+
+\section{Języki}
+
+\cvitemwithcomment{Angielski}{Biegła znajomość (FCE)}{}
+\cvitemwithcomment{Rosyjski}{Podstawowa znajomość --- w~trakcie nauki}{}
+
+\section{Inne umiejętności}
+
+\cvitemwithcomment{Języki programowania}{C/C++, Python, Verilog, SQL, PHP, MATLAB (znajomość podst.),\\ Simulink(znajomość podst.)}{}
+\cvitemwithcomment{Oprogramowania typu CAD i~IDE}{EAGLE 6 (schemat + layout), DxDesigner i~Expedition PCB\newline (znajomość ponadpodstawowa), Cadence (Schematic, ADE, Layout,\\ digital simulation), LtSPICE, Xilinx ISE}{}
+\cvitemwithcomment{Inne oprogramowanie i~technologie}{Linux, \LaTeX, git, Wordpress, MS Office}{}
+\cvitemwithcomment{Dodatkowe kwalifikacje}{Uprawnienia SEP do~1~kV, prawo jazdy kat.~B, dobra znajomość teorii\\ obwodów i~sygnałów, zdolności analityczne}{}
+
+\section{Zainteresowania}
+
+\cvlistitem{książki, snooker, e-sport, wycieczki rowerowe, fizyka.}
+
+\section{Oświadczenie}
+
+Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z Ustawą z dnia 29.08.1997 roku o Ochronie Danych Osobowych; tekst jednolity: Dz.~U.~z~2002r. Nr~101, poz.~926 ze~zm.).
+
+
+\bibliography{publications}
+\end{document}
