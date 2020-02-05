@@ -7,7 +7,7 @@
 
 %% ModernCV themes
 \moderncvstyle{classic}
-\moderncvcolor{blue}
+\moderncvcolor{black}
 %\renewcommand{\familydefault}{\sfdefault}
 \nopagenumbers{}
 
@@ -29,7 +29,9 @@
 \address{Na Popielówkę 75P/2}{32-087 Zielonki, Poland}
 \mobile{+48 515 083 938}
 \email{maciej.p.kopec@gmail.com}
-\extrainfo{Date of birth: 11\textsuperscript{th} April 1991}
+\extrainfo{\includegraphics[height=1em, trim={4.8cm 14.55cm 12.76cm 1.95cm}, clip]
+	{img/GitHub-Mark.eps}
+GitHub: \href{https://github.com/mpkopec}{mpkopec}}
 %\photo[80pt][0.4pt]{mkopec.jpg}
 
 %%------------------------------------------------------------------------------
@@ -39,63 +41,53 @@
 \makecvtitle
 
 \section{Education}
-\cventry{2015--2016}{PhD}{AGH-UST}{Cracow}{interrupted}{Major: \textbf{Physics} 
-at Faculty of Physics and Applied Computer Science}
 \cventry{2014--2015}{MSc}{\textbf{AGH-UST}}{\textbf{Cracow}}{5.0}{Major: \textbf{Technical Physics} at~Faculty of~Physics and~Applied Computer Science}
 \cventry{2010--2014}{BSc}{\textbf{AGH-UST}}{\textbf{Cracow}}{\textit{4.5}}{Major: \textbf{Technical Physics} at~Faculty of~Physics and~Applied Computer Science}
 
 \section{Professional experience}
 \cventry{April 2019 -- present}{Electronics Engineer}{Merit Poland sp. z 
 o.o}{}{}{}
-\cvlistitem{Electronic circuit design for automotive.}
-\cvlistitem{Simulations and data analysis.}
-\cvlistitem{Component database maintenance.}
-\cvlistitem{Development of ECAD tools integration process.}
-\cvlistitem{Tests and measurements.}
-\cvlistitem{Design and requirements analysis.}
-\cvlistitem{Supporting interns in their development.}
+\cvitem{}{At Merit, my current responsibilities include: designing electronic circuits for automotive purposes;
+electrical simulations and data analysis (including scripting); component database maintenance
+and development; ECAD tools integration process; tests and measurements of the designed circuits
+and supporting and mentoring interns.}
 
 \cventry{January 2018 -- March 2019}{Electronics Engineer}{Sii Poland}{}{}{}
 \vspace{-\baselineskip}
-\cvlistitem{Electronic circuit design for automotive.}
-\cvlistitem{Simulations and data analysis.}
-\cvlistitem{Component database maintenance.}
-\cvlistitem{Tests and measurements.}
-\cvlistitem{Design and requirements analysis.}
-\cvlistitem{Supporting interns in their development.}
+\cvitem{}{At Sii I was delegated to work as a contractor in Merit Poland sp.~z~o.o. There I was
+	responsible for designing electronic circuits for automotive purposes;
+	electrical simulations and data analysis (including scripting); component database maintenance
+	and development; ECAD tools integration process; tests and measurements of the designed circuits;
+	supporting and mentoring interns.}
 
-\cventry{December 2014 -- December 2017}{Beam diagnostics and Instrumentation Specialist}{National Synchrotron Radiation Centre `Solaris'}{}{}{}
-\cvlistitem{Electronic readout and measurement systems design.}
-\cvlistitem{Design for manufacture and proper mechanical integration.}
-\cvlistitem{Electronic prototyping and reworking.}
-\cvlistitem{Beam instrumentation design, maintenance, diagnostics and assembly.}
-\cvlistitem{Diagnostic data analysis.}
-\cvlistitem{Design simulations and simulation data analysis automation}
-\cvlistitem{Diagnostic equipment related IT works --- scripting, setup in 
-the~network, etc.}
+\cventry{December 2014 -- December 2017}{Beam diagnostics and Instrumentation Specialist}{National
+	Synchrotron Radiation Centre `Solaris'}{}{}{}
+\cvitem{}{At NSRC `Solaris' my tasks were: designing electronic readout and measurement
+systems; electronic prototyping and reworks; beam instrumentation design, assembly, maintenance
+(including scripting, setup, etc.) and diagnostics; beam diagnostic data analysis; electronic 
+simulations and data analysis.}
 
-\cventry{May 2016 -- \linebreak August 2016}{Embedded systems developer}{Organisation Européenne pour la Recherche Nucléaire (CERN)}{}{}{}
-\cvlistitem{Development of 1G ethernet link on ZC706 evaluation board \newline using Zynq SoC}
-\cvlistitem{Detector readout systems testing and debugging}
-\cvlistitem{Setting up development environments for detector readout systems}
+\cventry{May 2016 -- \linebreak August 2016}{Embedded systems developer}{Organisation Européenne
+	 pour la Recherche Nucléaire (CERN)}{}{}{}
+\cvitem{}{At CERN I was tasked with: development of 1G ethernet link on ZC706 evaluation board;
+detector readout systems testing and debugging and setting up development environments for
+detector readout systems.}
 
 \cventry{January 2014 -- \linebreak June 2014}{Hardware development intern}{Woodward Poland sp. z o.o.}{}{}{}
 \vspace{-\baselineskip}
-\cvlistitem{Electrical circuit design.}
-\cvlistitem{Working with PCB prototypes (e.g. soldering under a~microscope, 
-test 
-preparation).}
-\cvlistitem{Measurements and~data analysis.}
-\cvlistitem{RoHS directive compliance verification.}
+\cvitem{}{As an intern at Woodward Poland, I was working on: electrical circuit design (including
+	PCB design); testing and preparing prototypes; measurements and data analysis, as well as
+RoHS directive compliance verification.}
 
-\cventry{July 2013 -- \linebreak August 2013}{Electrical engineering trainee}{Faculty of~Physics and~Applied Computer Science}{}{}{}
+\cventry{July 2013 -- \linebreak August 2013}{Electrical engineering trainee}{Faculty of~Physics
+	and~Applied Computer Science}{}{}{}
 \vspace{-\baselineskip}
-\cvlistitem{Programming microcontrollers with ARM Cortex-M3 core.}
+\cvitem{}{Programming microcontrollers with ARM Cortex-M3 core.}
 
 \cventry{2008--2013}{Web-developer}{Back-end and front-end web development}{}{}{}
-\cvlistitem{HTML, CSS and jQuery front-end development.}
-\cvlistitem{Preparing custom templates for Wordpress.}
-\cvlistitem{Writing plugins and snippets for CMS systems(Wordpress, Joomla).}
+\cvitem{}{As a web developer I was working on: HTML, CSS and jQuery front-end design; preparing
+custom Wordpress templates; writing plugins and snippets for Joomla! and Wordpress systems
+and developing independent back-end applications in PHP and MySQL.}
 
 
 \section{Courses and certificates}
@@ -134,10 +126,10 @@ storage ring}, IPAC 2017}
 
 \section{University and private projects}
 \cventry{July 2014 -- \\Sptember 2015}{Master thesis}{}{}{}{{\large Subject: Control interface for SALT ASIC for LHCb detector tracker upgrade}}
-\cvlistitem{Hardware I\textsuperscript{2}C interface implementation in Verilog.}
+\cvitem{}{Hardware I\textsuperscript{2}C interface implementation in Verilog.}
 
 \cventry{July 2013 -- \\ October 2013}{Bachelor thesis}{}{}{}{{\large Subject: Demo application for colour touchscreen working in embedded system}}
-\cvlistitem{Design and~implementation of~GUI library for~LPC1768 microcotroller 
+\cvitem{}{Design and~implementation of~GUI library for~LPC1768 microcotroller 
 with a~demo application.}
 
 \section{Other skills}
@@ -147,14 +139,13 @@ Programming languages}}{\parbox{13cm}{C, C++ (basic), Python, Verilog,
 SystemVerilog, LabView (basic), VHDL, SQL (more than basic), MATLAB (basic), 
 Simulink(basic)}}{}
 \vspace{0.5\baselineskip}
-\cvitemwithcomment{Design software}{\parbox{13cm}{KiCad, EAGLE 6 (schematic 
-and~layout), Altium Designer, Mentor Graphics xPCB Design Flow, LTspice IV, 
-Xilinx ISE, Xilinx Vivado (more than basic), Xilinx SDK (basic), Keil uVision, 
-Atmel Studio, Eclipse}}{}
+\cvitemwithcomment{Design software}{\parbox{13cm}{KiCad, Altium Designer,
+Mentor Xpedition, LTspice IV, Xilinx Vivado (more than basic), Xilinx Vitis (basic),
+Eclipse}}{}
 \vspace{0.5\baselineskip}
 \cvitemwithcomment{\parbox{0.2\textwidth}{\vspace{-\baselineskip}\flushright 
 Other software and~technologies}}{\parbox{13cm}{Linux, \LaTeX, git, Wordpress, 
-MS Office}}{}
+MS Office, Vim}}{}
 \vspace{0.5\baselineskip}
 \cvitemwithcomment{\parbox{0.2\textwidth}{\vspace{-\baselineskip}\flushright 
 Additional qualifications}}{\parbox{13cm}{SEP 1\hspace{3pt}kV~license 
@@ -169,8 +160,7 @@ analytical problems}}{}
 \cvitemwithcomment{Japanese}{Semi-intermediate}{Learning in progress}
 
 \section{Interests}
-
-\cvlistitem{volleyball, cycling, books, DIY, snooker, e-sports, physics.}
+\cvitem{}{volleyball, cycling, books, DIY, snooker, e-sports, physics.}
 
 \section{Disclaimer}
 
