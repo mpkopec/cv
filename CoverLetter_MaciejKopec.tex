@@ -1,37 +1,238 @@
-\documentclass[a4paper, 12pt]{letter}
+% !TeX spellcheck = en_US
+\documentclass[11pt,a4paper,sans]{article}
 
+%% Character encoding
 \usepackage[utf8]{inputenc}
-\usepackage[margin=2.5cm]{geometry}
-%\usepackage[MeX]{polski}
-\longindentation=0.65\textwidth
+\usepackage{graphicx}
+
+% Uncomment only one font
+%\usepackage[default]{comfortaa}
+%\usepackage[sfdefault]{ClearSans}
+%\usepackage[sfdefault]{roboto}
+\usepackage{paratype}
+\usepackage[T1]{fontenc}
+\renewcommand\familydefault{\sfdefault}
+\usepackage{noindentafter}
+\pagestyle{empty}
+
+% URLs
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	linkcolor=black,
+	citecolor=black,
+	urlcolor=black
+}
+
+% Japanese
+\usepackage{CJKutf8}
+
+% Russian
+%\usepackage[russian]{babel}
+
+%% Adjust the page margins
+\usepackage[margin=1.8cm]{geometry}
+
+% Counters, iterables, ifs
+\usepackage{etoolbox}
+\usepackage{xifthen}
+
+% Horizontal lines
+\newcommand{\fullhorline}[1]{\noindent\makebox[\linewidth]{\rule{\paperwidth}{#1}}}
+\newcommand{\twhorline}[1]{\noindent\makebox[\linewidth]{\rule{\textwidth}{#1}}}
+
+\makeatletter
+\def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
+\makeatother
+
+% Formatting sections
+\usepackage{titlesec}
+\titleformat{\section}{\vspace{-\baselineskip}\bfseries\LARGE}{}{0pt}{}[]
+
+% CV commands
+\newcommand{\cvedudateitem}[6]{
+	
+	\noindent
+	\begin{minipage}[t]{0.22\linewidth}
+		#1
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.76\linewidth}
+		{\bfseries #2} | #3 | #4\\
+		\textbf{#5} | Thesis: \emph{#6}
+	\end{minipage}
+	\vspace{1\baselineskip}
+	
+	%	\hfill{\vrule width 1pt}\hfill
+	%	\begin{minipage}[t]{.92\linewidth}
+	%		\textbf{#5}, Thesis: \emph{#6}
+	%	\end{minipage}
+	%	\vspace{1\baselineskip}
+}
+
+\newcommand{\cvexpdateslimitem}[3]{
+	
+	\noindent
+	\begin{minipage}[t]{0.22\linewidth}
+		#1
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.76\linewidth}
+		{\bfseries #2} | #3
+	\end{minipage}
+	\vspace{.35\baselineskip}
+	
+}
+
+\newcommand{\cvexpdateitem}[4]{
+	\ifthenelse{\isempty{#4}}
+	{\cvexpdateslimitem{#1}{#2}{#3}}{
+		
+		\noindent
+		\begin{minipage}[t]{0.21\linewidth}
+			#1
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.766\linewidth}
+			{\bfseries #2} | #3
+		\end{minipage}
+		
+		\vspace{0.35\baselineskip}
+		\hfill{\vrule width 1pt}\hfill
+		\begin{minipage}[t]{.92\linewidth}
+			#4
+		\end{minipage}
+		\vspace{1\baselineskip}
+}}
+
+\newcommand{\cvexpdatecompactitem}[4]{
+	\ifthenelse{\isempty{#4}}
+	{\cvexpdateslimitem{#1}{#2}{#3}}{
+		
+		\noindent
+		\begin{minipage}[t]{0.21\linewidth}
+			#1
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.766\linewidth}
+			{\bfseries #2} | #3
+		\end{minipage}
+		
+		\vspace{0.35\baselineskip}
+		\hfill{\vrule width 1pt}\hfill
+		\begin{minipage}[t]{.92\linewidth}
+			#4
+		\end{minipage}
+		\vspace{.35\baselineskip}
+}}
+
+\newcommand{\cvartitem}[3]{
+	
+	\noindent
+	\begin{minipage}[t]{0.21\linewidth}
+		#1
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.766\linewidth}
+		#2\ifthenelse{\isempty{#3}}{}{, \emph{#3}}
+	\end{minipage}
+	\vspace{.35\baselineskip}
+}
+
+\newcommand{\cvskillsitem}[2]{
+	
+	\noindent
+	\begin{minipage}[t]{0.21\linewidth}
+		\vfill#1\vfill
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.766\linewidth}
+		\vfill#2\vfill
+	\end{minipage}
+	\vspace{.35\baselineskip}
+}
+
+% Job title list
+\listcsgadd{JobTitleList}{Electronics Engineer}
+\listcsgadd{JobTitleList}{Embedded software and FPGA enthusiast}
+\listcsgadd{JobTitleList}{DIY advocate}
+
+%% Personal data
+\newcommand{\firstname}{Maciej Paweł}
+\newcommand{\familyname}{Kopeć}
+
+\newcommand{\address}{Na Popielówkę 75P/2, 32-087 Zielonki, Poland}
+\newcommand{\mobile}{+48 515 083 938}
+\newcommand{\email}{maciej.p.kopec [at] gmail.com}
+\newcommand{\github}{\href{https://github.com/mpkopec}{mpkopec}}
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/maciej-kope\%C4\%87-46735595/}{Maciej Kopeć}}
+
+% Addressed to info
+\newcommand{\toname}{dr~hab.~inż.~prof.~AGH\\Bartosz Mindur}
+\newcommand{\toinstitution}{AGH University of Science\linebreak and Technology}
+\newcommand{\toinstaddress}{al.~Adama~Mickiewicza~30\\30-059 Kraków}
+
+%%------------------------------------------------------------------------------
+%% Content
+%%------------------------------------------------------------------------------
 \begin{document}
-\begin{letter}{Samsung Poland R\&D Center\\Al. Bora-Komorowskiego 25\\31-476 Kraków}
-\address{Maciej Kopeć\\Brogi~40/107\\31-431~Kraków}
+	% Begin header part
+	\begin{center}
+		% Name and familyname
+		{\huge \firstname \space \bfseries \familyname \normalfont, MSc}
+		\vspace{1\baselineskip}
+		%\twhorline{1pt}
+		
+		% Printing job title list
+		\large
+		\renewcommand*{\do}[1]{$\bullet$ #1 }
+		\dolistcsloop{JobTitleList}$\bullet$
+		\vspace{0.2\baselineskip}
+		\twhorline{1pt}
+		
+		% Contact info
+		\vspace{0.25\baselineskip}
+		\includegraphics[height=0.8em]{img/icons8-home-96.png}
+		\address \space |
+		\includegraphics[height=0.8em]{img/icons8-envelope-96.png}
+		\email \\
+		
+		\includegraphics[height=0.8em]{img/icons8-iphone-96.png}
+		\mobile \space |
+		\includegraphics[height=0.8em]{img/icons8-github-96.png}
+		\github \space |
+		\includegraphics[height=0.8em]{img/icons8-linkedin-96.png}
+		\linkedin
+		
+		\twhorline{1pt}
+		
+		\vspace{3\baselineskip}
+		
+		\hfill
+		\setlength{\fboxrule}{1pt}
+		\begin{minipage}{0.4\textwidth}
+			\begin{flushleft}
+				{\bfseries\toname}\\\vspace{0.5\baselineskip}
+				{\bfseries\toinstitution}\\
+				\toinstaddress
+			\end{flushleft}
+		\end{minipage}
+		\vspace{2\baselineskip}
+		
+		{\bfseries\Huge Cover letter}
+	\end{center}
 
-\opening{Dear Sir or Madam,}
+	% Content
+	
 
-In response to~your job opening, I would like to~place my candidature.
-
-I am a~young, eager to learn student in my fifth year at~the~AGH-UST doing~a~degree in~technical physics. Electronics and~embedded systems are my passion, which is the~main reason why, I~think, I would be a~perfect candidate for the~posted opening.
-
-During my internship at Woodward Poland, I was responsible for many electronics-related tasks. I~prepared setups, performed tests and then analyzed the~results. I~also designed electrical circuits and a~few PCBs. Throughout my work, in many areas, I was an independent engineer and~solved problems myself without any guidance. What is more, there were some ideas of mine, which were accepted and~used more generally, in bigger projects.
-
-The~above is not my only experience with designing electronics on~the~schematic level. I~made numerous hobbystic projects, which I designed from schematic to a~PCB. Some of~the projects were made on a~prototype board, some on~a~universal PCB and some were produced by a~PCB manufacturer. During courses at the~university, I also designed and simulated integrated circuits, such as an operation amplifier or a Digital-to-Analog Converter. Both projects achieved maximum grades. What is more, the~DAC was designed with 2-bit better resolution (compared to~the~rest of~the~students group) and~the~same acceptable error rates, which made the project even more challenging. Both ICs were layouted and tested afterwards as well.
-
-While I am not afraid of analog electronics, it is not my strongest side and I realize there is still much to learn. I am eager to do that and I really find analog circuit designing pleasant. All in all, my strongest side is~the~digital electronics. The~most fascinating topics for me in this category are data transmission protocols. Their hardware and software implementation is the thing, I enjoy the most. My recent work in this area is my master's thesis, for which I am developing a~hardware I\textsuperscript{2}C protocol implementation. It will be a~part of~a readout electronics chip for CERN, Geneva. Most of~my work in~digital electronics is based on Verilog HDL. For my master's thesis I will also get to know System Verilog. What is more I prepared several projects on Xilinx Spartan-3AN Starter Kit during one of~the~courses at the~university.
-
-Designing electronics is not my only asset. I have plenty of~experience in programming. Earlier I~was working in web-development, and recently embedded systems, especially microcontrollers. I used ATmega and ARM cores and developed a~few applications. The biggest and the~most complicated was my bachelor's thesis. In all microcontroller-based projects I used ANSI~C. I find bringing a~tiny computer to life very exciting and enjoyable. This is definitely one of my favorite activities and~I~tend to have a~lot of~ideas for microcontroller applications.
-
-To sum up, there are areas in electronics, which I like a~lot, some of~the design process I~like a~little less, but there is no better feeling in the world, than looking at a~finished, working product, which was developed with hard work. Nothing makes one more proud than seeing this.
-
-\vspace{4\baselineskip}
-
-\signature{\vspace{-3\baselineskip}Maciej Kopeć}
-
-\closing{Yours faithfully,}
-
-%enclosure listing
-%\encl{}
-
-\end{letter}
+	% Signature
+	\hfill
+	\begin{minipage}{0.3\linewidth}
+		\begin{flushleft}
+			Yours sincerely,
+			\\\vspace{3\baselineskip}
+			Maciej Kopeć
+		\end{flushleft}
+	\end{minipage}
+	
 \end{document}
