@@ -16,12 +16,13 @@
 \pagestyle{empty}
 
 % URLs
+\usepackage{xcolor}
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks,
 	linkcolor=black,
 	citecolor=black,
-	urlcolor=black
+	urlcolor=black,
 }
 
 % Japanese
@@ -164,13 +165,18 @@
 \newcommand{\address}{Na Popielówkę 75P/2, 32-087 Zielonki, Poland}
 \newcommand{\mobile}{+48 515 083 938}
 \newcommand{\email}{maciej.p.kopec [at] gmail.com}
-\newcommand{\github}{\href{https://github.com/mpkopec}{mpkopec}}
+\newcommand{\github}{\href[]{https://github.com/mpkopec}{mpkopec}}
 \newcommand{\linkedin}{\href{https://www.linkedin.com/in/maciej-kope\%C4\%87-46735595/}{Maciej Kopeć}}
 
 % Addressed to info
 \newcommand{\toname}{dr~hab.~inż.~prof.~AGH\\Bartosz Mindur}
-\newcommand{\toinstitution}{AGH University of Science\linebreak and Technology}
+\newcommand{\toinstitution}
+{Faculty of Physics and Applied Computer Science,\\
+AGH University of Science\linebreak and Technology}
 \newcommand{\toinstaddress}{al.~Adama~Mickiewicza~30\\30-059 Kraków}
+
+% Common macros
+\newcommand{\iic}{I\textsuperscript{2}C}
 
 %%------------------------------------------------------------------------------
 %% Content
@@ -206,26 +212,96 @@
 		
 		\twhorline{1pt}
 		
-		\vspace{3\baselineskip}
+		\vspace{2\baselineskip}
 		
 		\hfill
 		\setlength{\fboxrule}{1pt}
 		\begin{minipage}{0.4\textwidth}
 			\begin{flushleft}
 				{\bfseries\toname}\\\vspace{0.5\baselineskip}
-				{\bfseries\toinstitution}\\
+				\emph{\toinstitution}\\\vspace{0.5\baselineskip}
 				\toinstaddress
 			\end{flushleft}
 		\end{minipage}
 		\vspace{2\baselineskip}
 		
-		{\bfseries\Huge Cover letter}
+		{\bfseries\Huge Motivation letter}
 	\end{center}
 
 	% Content
+	\noindent
+	Dear Sir,
+	\vspace{1\baselineskip}
 	
+	I would like to express my interest in the PhD candidate position offering published on
+	\href{https://euraxess.ec.europa.eu/jobs/485237}{Euraxess} website, since research
+	and~development in~technical field was always a~strong suite of mine. Also, a~PhD~title
+	would be beneficial for my future career.
+	
+	Both my Bachelor's and Master's degree covered the broad field of technical physics
+	with a deviation towards readout systems and interfacing particle detectors. My Bachelor's
+	thesis covered the~topic of~interfacing a~touchscreen interface within an~embedded systems.
+	Then I learned much about the topic of~efficiency and~execution speed of~programs as even
+	small changes in~the~communication interface handling caused big impact on~the~end result,
+	when multiplied by~the~size of~the~screen. \textcolor{gray}{I believe, that in the~project presented, 
+	the~challenge would be similar, since the~detector is to~contain spatial information.}
+	
+	My Master's thesis' task was to~prepare a~slow control interface for a~large detector chip
+	for LHCb experiment at~CERN. This was not a~straightforward task, since the~protocol used
+	(\iic) was modified, and~the~whole setup of~the~chip was dependent on~the~design part.
+	During that~time, I discovered the~importance of~slow~control interface, example layout
+	of~the~configuration registers and how~to~design larges modules of~digital electronics
+	using Verilog HDL\footnote{Hardware Description Language}. \textcolor{gray}{Tu też może
+	jakieś odniesienie? Ale nie wiem czy nie będzie to zbyt powtarzalne.}
+
+	Whilst studying at~the~AGH-UST I started to~gain professional experience as~an~electronics
+	engineer in~the~industry, at~first in~Woodward Governor Poland as~a~hardware development
+	intern. There I~learned to~read enormous electrical schematics, use complex laboratory
+	equipment, work with complicated prototypes and~properly perform hardware tests. I~was
+	given many opportunities to~design and~test hardware on~my~own, with little to~no~supervision.
+	This effected in~much~more confidence when designing and~using complex hardware.
+	
+	Later that year, after finishing the~internship I was~hired at~National Synchrotron
+	Radiation Centre `Solaris', which~is~a~part of~Jagiellonian University. My responsibilities
+	as~beam diagnostics and~instrumentation specialist, were to~configure and~maintain whole
+	ecosystem of~electron beam diagnostics hardware, e.g.~beam position and current
+	monitors, oscilloscopes, timing system,~etc. It was difficult to~cope with~that~much
+	equipment, however it was beneficial to~see how important is automation of~repeatable
+	tasks. At~this time I also started designing hardware as~an~independent engineer, 
+	i.e.~without technical supervision. Designed devices were suited for the~specific needs
+	of~the~synchrotron. To make the~equipment as~precise and~reliable as~possible I~participated
+	in~a~significant number of~courses, e.g.~\emph{Essential high-speed PCB design for signal 
+	integrity} at~Cadence.
+
+	In 2016 I had a~brief opportunity to~work at~CERN as~an~embedded systems developer. My~main
+	task was to~prepare a~working prototype of~a~1G~ethernet capable hardware in an~FPGA,
+	which was partially successful. Despite many challenges, I was able to~implement the~lowest
+	layers of~the~OSI model in~FPGA. This was very humbling experience showing never to~underestimate
+	the complexity of the task.
+	
+	Having ended work at~`Solaris', I was hired as~an~electronics engineer first at~Sii Poland,
+	then Merit Poland, in~both cases I~was working in~the~latter. At~this~time I have just 
+	over~two~years of~experience working there. My~tasks at~Merit vary greatly, from designing
+	and~simulating circuits, through PCB design to~electronic component database maintenance
+	and~ECAD tools integration preparation.
+	
+	As~a~designer I~was responsible for developing a~steering wheel switch with~capacitive touch
+	functionality and~artificial haptic response. This was very demanding, since the~technology
+	is new and~the~footprint of~the~device small. For this switch we developed new kind~of~haptic
+	driver, which performance is~outstanding. This~required simulation, data analysis, schematic 
+	and~PCB design skills. One of~the~first prototypes of~the~switch has been presented	during
+	Shanghai Auto Show~2019, which actually taught me to work under pressure, since the~deadline
+	was tight and~the~device a~prototype.
+	
+	Being a~components' database specialist is~a~responsible design as~well. The~whole company
+	operation in~the~electronic department is~dependent on~the~condition of~the~database. 
+	This~is~even more challenging, since Mentor Xpedition provides a~powerful, yet complex
+	tool. That being said, much of~the~time dedicated to~this task is consumed by~conceptual
+	and~research work. Setting~up a~library like that is~difficult and~time consuming, nevertheless
+	it shows the~amount of~time saved by~every engineer with properly set up tools.
 
 	% Signature
+	\vspace{3\baselineskip}
 	\hfill
 	\begin{minipage}{0.3\linewidth}
 		\begin{flushleft}
