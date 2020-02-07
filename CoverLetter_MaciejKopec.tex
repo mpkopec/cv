@@ -14,6 +14,19 @@
 \renewcommand\familydefault{\sfdefault}
 \usepackage{noindentafter}
 \pagestyle{empty}
+\usepackage{textgreek}
+
+% Underlining
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+
+\newcommand{\myuline}[1]{%
+	\uline{\phantom{#1}}%
+	\llap{\contour{white}{#1}}%
+}
 
 % URLs
 \usepackage{xcolor}
@@ -154,7 +167,7 @@
 }
 
 % Job title list
-\listcsgadd{JobTitleList}{Electronics Engineer}
+\listcsgadd{JobTitleList}{Electronics engineer}
 \listcsgadd{JobTitleList}{Embedded software and FPGA enthusiast}
 \listcsgadd{JobTitleList}{DIY advocate}
 
@@ -233,72 +246,104 @@ AGH University of Science\linebreak and Technology}
 	Dear Sir,
 	\vspace{1\baselineskip}
 	
-	I would like to express my interest in the PhD candidate position offering published on
-	\href{https://euraxess.ec.europa.eu/jobs/485237}{Euraxess} website, since research
-	and~development in~technical field was always a~strong suite of mine. Also, a~PhD~title
-	would be beneficial for my future career.
+	I would like to~express my~interest in~the~PhD position opening, published 
+	on~\href{https://euraxess.ec.europa.eu/jobs/485237}{Euraxess}, for~a~research project
+	titled `A reconfigurable detector for~measuring the~spatial distribution 
+	of~radiation dose for~applications in~the~preparation of~individual patient treatment
+	plans'. The~description further states following expertise requirements `detector physics,
+	dedicated front-end electronics and readout systems, PCB design, computer science (data
+	analysis), machine/deep learning'. As~an~electronics engineer with interests in~embedded 
+	systems design and~programming, I believe I am a~perfect candidate for~the~presented offer.
 	
-	Both my Bachelor's and Master's degree covered the broad field of technical physics
-	with a deviation towards readout systems and interfacing particle detectors. My Bachelor's
-	thesis covered the~topic of~interfacing a~touchscreen interface within an~embedded systems.
-	Then I learned much about the topic of~efficiency and~execution speed of~programs as even
-	small changes in~the~communication interface handling caused big impact on~the~end result,
-	when multiplied by~the~size of~the~screen. \textcolor{gray}{I believe, that in the~project presented, 
-	the~challenge would be similar, since the~detector is to~contain spatial information.}
+	Such complex project will need an~efficient digital 
+	readout	system. At~CERN I~was working on~a~system, which~might be~suitable. I~was responsible 
+	for~implementing a~1$\,$G~ethernet link over optical medium. This involved evaluating
+	and~implementing IP\footnote{Intellectual Property}~cores, reading and~using technical 
+	documentation for~the~FPGA used, configuring the~FPGA and~external auxilliary circuitry. 
+	Despite the~project not being
+	entirely successful (I~was able to~activate only the~lowest OSI layers), it gave me 
+	notable knowledge about the~ethernet protocol, as~well~as fast 
+	readout systems in~general. 
 	
-	My Master's thesis' task was to~prepare a~slow control interface for a~large detector chip
-	for LHCb experiment at~CERN. This was not a~straightforward task, since the~protocol used
-	(\iic) was modified, and~the~whole setup of~the~chip was dependent on~the~design part.
-	During that~time, I discovered the~importance of~slow~control interface, example layout
-	of~the~configuration registers and how~to~design larges modules of~digital electronics
-	using Verilog HDL\footnote{Hardware Description Language}. \textcolor{gray}{Tu też może
-	jakieś odniesienie? Ale nie wiem czy nie będzie to zbyt powtarzalne.}
+	Any kind of~readout system, beside the~fast interface for~the~data acquisition, needs a~slow
+	control block for configuring the~transfer rate, additional data appended, clocks 
+	and~timing~etc. This~kind
+	of~module, usually has slower, simpler digital interface. As~stated in~my~CV, I successfully
+	developed similar system for the~LHCb experiment upgrade. Implementation involved \iic\space 
+	protocol, register mapping and~writing, as~well~as~clock domain synchronization and~voting
+	mechanism for~improved reliability. The~design was afterwards tested in~hardware.
+	
+	As for~analogue readout and~custom electronics, three projects especially stand~out 
+	from~the~course of~my~career. Working at~`Solaris' I~developed a~device, which~enabled 
+	converting analogue signal proportional to~the~beam current in~such a~way, that~the~signal
+	could be fed to~LLRF\footnote{Low-Level Radio Frequency} system for fast feedback, indicating 
+	when the~beam
+	was lost. Main features of~the~device were: offsetting, setting gain, inverting input signal.
+	Project was implemented after performing simulations and~estimating uncertainties, using 
+	high-end analogue components.
+	
+	Simulation and~data analysis for~this circuit was a~challenge since it involved not only
+	checking plots from~the~simulation tool, but~also performing calculations based on~the~time 
+	domain raw data. The~biggest part of~which was estimating uncertainties of~the~real output 
+	signal compared to~the~ideal one. The~task was done using Python programming language
+	and~values were presented as~plots of~uncertainty dependent on~other parameters. Further 
+	necessary analysis was performed in~a~similar manner.
+	
+	Preparing this~design I also faced challenges in~the~PCB~design field. During which~I~had 
+	to~focus on~proper power supply layout (which was a~precise, symmetrical
+	switching power supply) and~analogue conditioning part. Both tasks focused on~minimising 
+	PCB~parasitic elements and~ensuring proper high current paths.
+	
+	Another challenging analogue project was to~develop a~current source driver for~exciting
+	high inductive load. It~was~essential for~the~development of~artificial haptic feedback
+	in~one of~the~Merit Innovation Projects~(MIP). Main goals in~this design were to~achieve 
+	high rise times (3$\,$A in~0.1$\,$ms) and~precise voltage-current transfer function  
+	in~time-domain. 
+	Desired circuit	topology was first simulated, and after verification, prototyped.  
+	Correct component choice turned~out to~be~vital, since a~high current MOSFET transistor is 
+	the~main power 
+	element. Gate capacitance of~the~transistor is so~high, that~when~improper elements were used, 
+	oscillations have been observed in~the~circuit and, as~a~result, initial requirements were not 
+	possible to be met. Intending to~make the~driver more reliable, we~designed a~custom 
+	over-current protection circuit, which~turns~off the~driver when~integrated current 
+	value~exceeds set threshold.
+	
+	Simulation and~data analysis for~this~project was~also a~vast topic. Firstly, the~simulation
+	of~the~complete circuit had to~be checked, which involved comparing and~analysing multiple 
+	plots, stimulus scenarios and~worst case situations. Having the~prototypes finished, we~analysed
+	oscilloscope measurements to~find~out to~judge the~precision of~the~transfer function.
+	Finally we had to~measure the~haptic feedback feeling, which~was done using an~analogue
+	accelerometer. This involved also parsing and~recalculating the~data using Python programming
+	language to~present the~results in~human readable~g-unit.
+	
+	The project also~included laying out the~PCB. My~main focus when doing that were to~properly
+	lay~out current paths, as~well~as pay attention to~the~feedback loop for~the~driver.
+	The~layout was even more challenging due to~size reduction of~the~whole device and~high count 
+	of~other necessary components. On~a~6~layer~PCB with~rough dimensions of~40~by~50$\,$mm, we~were
+	able to~fit not only the~current source, but~also switching power supply for~high current~LEDs,
+	LEDs themselves, a~64-pin microcontroller and~22-pin~capacitive touch interface. All of~that 
+	we managed to~fit on~a~6~layer PCB.
+	
+	The~ aforementioned project was not the~only analogue design challenge at~Merit. Another 
+	interesting one is a~recent
+	attempt to~create reliable temperature measurement circuit, which would not need calibrating
+	in~factory. Such design was prepared and~prototyped with success, although the~project is 
+	ongoing. My role was, to~first aid the~design applying my knowledge 
+	in~the~field of~electronic amplifiers and filters, then help to~analyse the~data gathered
+	during prototyping. Here, the~most beneficial was my~knowledge of~uncertainty calculation used 
+	to~verify the~measurement process.
 
-	Whilst studying at~the~AGH-UST I started to~gain professional experience as~an~electronics
-	engineer in~the~industry, at~first in~Woodward Governor Poland as~a~hardware development
-	intern. There I~learned to~read enormous electrical schematics, use complex laboratory
-	equipment, work with complicated prototypes and~properly perform hardware tests. I~was
-	given many opportunities to~design and~test hardware on~my~own, with little to~no~supervision.
-	This effected in~much~more confidence when designing and~using complex hardware.
+	During my internship in~Woodward, most of~my tasks were connected to~measurement and~data
+	analysis, mainly testing pre-production prototypes of~devices intended to~be introduced onto
+	the~market. I was preparing and~filling out measurement spreadsheets, sometimes also automating
+	the~whole process. There I had first contact with high-end complicated laboratory equipment,
+	which~helped me later along my~career.
 	
-	Later that year, after finishing the~internship I was~hired at~National Synchrotron
-	Radiation Centre `Solaris', which~is~a~part of~Jagiellonian University. My responsibilities
-	as~beam diagnostics and~instrumentation specialist, were to~configure and~maintain whole
-	ecosystem of~electron beam diagnostics hardware, e.g.~beam position and current
-	monitors, oscilloscopes, timing system,~etc. It was difficult to~cope with~that~much
-	equipment, however it was beneficial to~see how important is automation of~repeatable
-	tasks. At~this time I also started designing hardware as~an~independent engineer, 
-	i.e.~without technical supervision. Designed devices were suited for the~specific needs
-	of~the~synchrotron. To make the~equipment as~precise and~reliable as~possible I~participated
-	in~a~significant number of~courses, e.g.~\emph{Essential high-speed PCB design for signal 
-	integrity} at~Cadence.
-
-	In 2016 I had a~brief opportunity to~work at~CERN as~an~embedded systems developer. My~main
-	task was to~prepare a~working prototype of~a~1G~ethernet capable hardware in an~FPGA,
-	which was partially successful. Despite many challenges, I was able to~implement the~lowest
-	layers of~the~OSI model in~FPGA. This was very humbling experience showing never to~underestimate
-	the complexity of the task.
+	I have also designed many more PCBs for my private and university projects, which~gave me
+	proficiency in using various tools used to~design such boards, like Altium, Mentor Xpedition
+	and~KiCad.
 	
-	Having ended work at~`Solaris', I was hired as~an~electronics engineer first at~Sii Poland,
-	then Merit Poland, in~both cases I~was working in~the~latter. At~this~time I have just 
-	over~two~years of~experience working there. My~tasks at~Merit vary greatly, from designing
-	and~simulating circuits, through PCB design to~electronic component database maintenance
-	and~ECAD tools integration preparation.
 	
-	As~a~designer I~was responsible for developing a~steering wheel switch with~capacitive touch
-	functionality and~artificial haptic response. This was very demanding, since the~technology
-	is new and~the~footprint of~the~device small. For this switch we developed new kind~of~haptic
-	driver, which performance is~outstanding. This~required simulation, data analysis, schematic 
-	and~PCB design skills. One of~the~first prototypes of~the~switch has been presented	during
-	Shanghai Auto Show~2019, which actually taught me to work under pressure, since the~deadline
-	was tight and~the~device a~prototype.
-	
-	Being a~components' database specialist is~a~responsible design as~well. The~whole company
-	operation in~the~electronic department is~dependent on~the~condition of~the~database. 
-	This~is~even more challenging, since Mentor Xpedition provides a~powerful, yet complex
-	tool. That being said, much of~the~time dedicated to~this task is consumed by~conceptual
-	and~research work. Setting~up a~library like that is~difficult and~time consuming, nevertheless
-	it shows the~amount of~time saved by~every engineer with properly set up tools.
 
 	% Signature
 	\vspace{3\baselineskip}
