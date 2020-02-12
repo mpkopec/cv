@@ -30,16 +30,6 @@
 	\llap{\contour{white}{#1}}%
 }
 
-% URLs
-\usepackage{xcolor}
-\usepackage{hyperref}
-\hypersetup{
-	colorlinks,
-	linkcolor=black,
-	citecolor=black,
-	urlcolor=black,
-}
-
 % Japanese
 \usepackage{CJKutf8}
 
@@ -52,6 +42,16 @@
 % Counters, iterables, ifs
 \usepackage{etoolbox}
 \usepackage{xifthen}
+
+% URLs
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	linkcolor=black,
+	citecolor=black,
+	urlcolor=black,
+}
 
 % Horizontal lines
 \newcommand{\fullhorline}[1]{\noindent\makebox[\linewidth]{\rule{\paperwidth}{#1}}}
@@ -250,89 +250,92 @@ AGH University of Science\linebreak and Technology}
 	
 	I would like to~express my~interest in~the~PhD position opening, published 
 	on~\href{https://euraxess.ec.europa.eu/jobs/485237}{Euraxess}, for~a~research project
-	titled `A reconfigurable detector for~measuring the~spatial distribution 
+	entitled `A reconfigurable detector for~measuring the~spatial distribution 
 	of~radiation dose for~applications in~the~preparation of~individual patient treatment
 	plans'. The~description further states following expertise requirements `detector physics,
 	dedicated front-end electronics and readout systems, PCB design, computer science (data
 	analysis), machine/deep learning'. As~an~electronics engineer with interests in~embedded 
-	systems design and~programming, I~believe I~am the~perfect candidate for~the~position offer.
+	systems design and~programming, I~believe I~am the~ideal candidate for~the~position offer.
 	
-	Such complex project will need an~efficient digital 
+	Such a~complex project will need an~efficient digital 
 	readout	system. At~CERN I~was working on~a~system, which~might have had similar requirements. 
 	I~was responsible 
 	for~implementing a~1$\,$G~ethernet link over optical medium. This involved evaluating
-	and~implementing IP\footnote{Intellectual Property}~cores, reading and~using technical 
+	and~implementing IP~cores, reading and~using technical 
 	documentation for~the~FPGA used, configuring the~FPGA and~external auxilliary circuitry. 
-	Despite the~project not being
-	entirely successful (I~was able to~activate only the~lowest OSI layers), it gave me 
-	notable knowledge about the~ethernet protocol, as~well~as fast 
+	Despite activating only the~lowest layers of~the~OSI model, it~gave me 
+	notable knowledge about the~ethernet protocol, as~well~as~fast 
 	readout systems in~general. 
 	
 	Any kind of~readout system, beside the~fast interface for~the~data acquisition, needs a~slow
-	control block for configuring the~transfer rate, additional data appended, clocks 
-	and~timing~etc. This~kind
-	of~module, usually has a~slower, simpler digital interface. As~stated in~my~CV, I successfully
-	developed similar system for the~LHCb experiment upgrade. Implementation involved \iic\space 
-	protocol, register mapping and~writing, as~well~as~clock domain synchronization and~voting
+	control block for configuring the~transfer rate, additional data appended, clocks, timing~etc. 
+	This~kind
+	of~module usually has a~slower, simpler digital interface. As~stated in~my~CV, I successfully
+	developed a~similar system for the~LHCb experiment upgrade. Implementation involved 
+	the~\iic\space 
+	protocol, register mapping, clock domain synchronization and~voting
 	mechanism for~improved reliability. The~design was afterwards tested in~hardware.
 	
 	As for~analogue readout and~custom electronics, three projects especially stand~out 
 	from~the~course of~my~career. Working at~`Solaris' I~developed a~device, which~enabled 
-	converting analogue signal proportional to~the~beam current in~such a~way, that~the~signal
-	could be fed to~LLRF\footnote{Low-Level Radio Frequency} system for fast feedback, indicating 
+	converting analogue signal proportional to~the~beam current in~such a~way that~the~signal
+	could be fed to~the~LLRF\footnote{Low-Level Radio Frequency} system for fast feedback, indicating 
 	when the~beam
-	was lost. Main features of~the~device were: offsetting, setting gain, inverting input signal.
-	Project was implemented after performing simulations and~estimating uncertainties, using 
+	was lost. Main features of~the~device were: offsetting, setting gain and~inverting input signal.
+	The~project was implemented after performing simulations and~estimating uncertainties, using 
 	high-end analogue components.
 	
 	Simulation and~data analysis for~this circuit was a~challenge since it involved not only
 	checking plots from~the~simulation tool, but~also performing calculations based on~the~time 
-	domain raw data. The~biggest part of~which was estimating uncertainties of~the~real output 
-	signal compared to~the~ideal one. The~task was done using Python programming language
+	domain raw data. The~biggest part of~said task was estimating uncertainties of~the~real output 
+	signal compared to~the~ideal one. The~task was done using the~Python programming language
 	and~values were presented as~plots of~uncertainty dependent on~other parameters. Further 
 	necessary analysis was performed in~a~similar manner.
 	
-	Preparing this~design I also faced challenges in~the~PCB~design field. During which~I~had 
-	to~focus on~proper power supply layout (which was a~precise, symmetrical
-	switching power supply) and~analogue conditioning part. Both tasks focused on~minimising 
+	Preparing this~design I also faced challenges in~the~PCB~design field, when~I~had 
+	to~focus on~the~proper power supply layout (which was a~precise, symmetrical
+	switching power supply) and~the~analogue conditioning part. Both tasks focused on~minimising 
 	PCB~parasitic elements and~ensuring proper high current paths.
 	
-	Another challenging analogue project was to~develop a~current source driver for~exciting
+	Another challenging analogue project was developing a~current source driver for~exciting
 	high inductive load. It~was~essential for~the~development of~artificial haptic feedback
 	in~one of~the~Merit Innovation Projects~(MIP). Main goals in~this design were to~achieve 
-	high rise times (3$\,$A in~0.1$\,$ms) and~precise voltage-current transfer function  
+	high rise times (3$\,$A in~0.1$\,$ms) and~a~precise voltage-current transfer function  
 	in~time-domain. 
-	Desired circuit	topology was first simulated, and after verification, prototyped.  
-	Correct component choice turned~out to~be~vital, since a~high current MOSFET transistor is 
-	the~main power 
-	element. Gate capacitance of~the~transistor is so~high, that~when~improper elements were used, 
-	oscillations have been observed in~the~circuit and, as~a~result, initial requirements were not 
-	possible to be met. Intending to~make the~driver more reliable, we~designed a~custom 
-	over-current protection circuit, which~turns~off the~driver when~integrated current 
-	value~exceeds set threshold.
+	Desired circuit	topology was first simulated and~then, after~verification, prototyped.  
+	Correct component choice unfolded to~be~vital, since a~high current MOSFET transistor 
+	was~the~main power 
+	element. Gate capacitance of~the~transistor was~high enough to~cause oscillations when improper 
+	parts were~used, as~a~result, it~would not be~possible to~meet the~initial requirements. 
+	Intending to~make the~driver more reliable, we~designed a~custom 
+	over-current protection circuit, which~turned~off the~driver when~integrated current 
+	value~exceeded set threshold.
 	
 	Simulation and~data analysis for~this~project was~also a~vast topic. Firstly, the~simulation
 	of~the~complete circuit had to~be checked, which involved comparing and~analysing multiple 
-	plots, stimulus scenarios and~worst case situations. Having the~prototypes finished, we~analysed
-	oscilloscope measurements to~find~out to~judge the~precision of~the~transfer function.
-	Finally we had to~measure the~haptic feedback feeling, which~was done using an~analogue
-	accelerometer. This involved also parsing and~recalculating the~data using Python programming
-	language to~present the~results in~human readable~g-unit.
+	plots, stimulus scenarios and~worst case situations. After~finishing the~prototypes, we~analysed
+	oscilloscope measurements to~assess the~precision of~the~transfer function.
+	Finally, we~had to~measure the~haptic feedback feeling, which~was done using an~analogue
+	accelerometer. This involved also parsing and~recalculating the~data using the~Python 
+	programming	language to~present the~results in~human readable~g-unit.
 	
-	The project also~included laying out the~PCB. My~main focus when doing that were to~properly
-	lay~out current paths, as~well~as pay attention to~the~feedback loop for~the~driver.
+	The project also~included laying out the~PCB. My~main focus areas when doing that were 
+	to~properly
+	route the~current paths as~well~as pay attention to~the~feedback loop of~the~driver.
 	The~layout was even more challenging due to~size reduction of~the~whole device and~high count 
 	of~other necessary components. On~a~6~layer~PCB with~rough dimensions of~40~by~50$\,$mm, we~were
 	able to~fit not only the~current source, but~also switching power supply for~high current~LEDs,
-	LEDs themselves, a~64-pin microcontroller and~22-pin~capacitive touch interface. All of~that 
-	we managed to~fit on~a~6~layer PCB.
+	LEDs themselves, a~64-pin microcontroller and~a~\mbox{22-pin}~capacitive touch interface. 
+	It~is~worth
+	mentioning that routing so~many touch signals on~such a~small~PCB was an~additional difficulty,
+	since they are very prone to~noise. Despite that, the~project was fully functional.
 	
-	The~ aforementioned project was not the~only analogue design challenge at~Merit. Another 
-	interesting one is a~recent
-	attempt to~create reliable temperature measurement circuit, which would not need calibrating
-	in~factory. Such design was prepared and~prototyped with success, although the~project is 
-	ongoing. My role was, to~first aid the~design applying my knowledge 
-	in~the~field of~electronic amplifiers and filters, then help to~analyse the~data gathered
+	The~aforementioned project was not the~only analogue design challenge at~Merit. Another 
+	interesting one was a~recent
+	attempt to~create a~reliable temperature measurement circuit, which would not need calibrating
+	in~factory. Such a~design was prepared and~prototyped with success, although the~project is 
+	still ongoing. My role was to~first aid the~design applying my knowledge 
+	in~the~field of~electronic amplifiers and filters, and~then~help to~analyse the~data gathered
 	during prototyping. Here, the~most beneficial was my~knowledge of~uncertainty calculation used 
 	to~verify the~measurement process.
 	
@@ -340,7 +343,7 @@ AGH University of Science\linebreak and Technology}
 	proficiency in using various tools used to~design such boards, like Altium, Mentor Xpedition
 	and~KiCad.
 	
-	In~conclusion, I~think that my background and skillset have prepared me to~be a~successful 
+	In~conclusion, I~believe that my background and skillset have prepared me to~be a~successful 
 	contributing team member in~the~offered position and~for an~organization exactly like 
 	yours. I~appreciate your time and~consideration.
 
