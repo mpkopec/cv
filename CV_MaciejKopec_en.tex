@@ -78,7 +78,9 @@
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.76\linewidth}
-		{\bfseries #2} | #3
+		\begin{flushleft}
+			{\bfseries #2} | #3
+		\end{flushleft}
 	\end{minipage}
 	\vspace{.35\baselineskip}
 	
@@ -94,7 +96,9 @@
 		\end{minipage}
 		\hfill
 		\begin{minipage}[t]{0.766\linewidth}
-			{\bfseries #2} | #3
+			\begin{flushleft}
+				{\bfseries #2} | #3
+			\end{flushleft}
 		\end{minipage}
 		
 		\vspace{0.35\baselineskip}
@@ -142,14 +146,19 @@
 \newcommand{\cvskillsitem}[2]{
 	
 	\noindent
-	\begin{minipage}[t]{0.21\linewidth}
-		\vfill#1\vfill
+	\begin{minipage}{0.21\linewidth}
+		\begin{flushleft}
+			#1
+		\end{flushleft}
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.766\linewidth}
-		\vfill#2\vfill
+	\begin{minipage}{0.766\linewidth}
+		
+		\begin{flushleft}
+			#2
+		\end{flushleft}
 	\end{minipage}
-	\vspace{.35\baselineskip}
+	\vspace{.65\baselineskip}
 }
 
 % Job title list
@@ -250,7 +259,7 @@
 	\cvexpdateitem
 		{May 2016 -- Aug 2016}
 		{Embedded systems developer}
-		{Organisation Européenne pour la Recherche Nucléaire (CERN)}
+		{Conseil Européen pour la Recherche Nucléaire~(CERN)}
 		{At CERN I was tasked with: development of 1G ethernet link on~the~ZC706 evaluation board;
 		detector readout systems testing and debugging and setting up development environments for
 		detector readout systems.}
