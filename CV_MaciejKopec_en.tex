@@ -5,6 +5,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
+\usepackage{biblatex}
+\addbibresource{cvbib.bib}
+
 % Uncomment only one font
 %\usepackage[default]{comfortaa}
 %\usepackage[sfdefault]{ClearSans}
@@ -298,68 +301,58 @@
 	
 	\section{Courses and certificates}	
 	\cvexpdatecompactitem
-		{Feb 2020}
+		{20 Feb 2020}
 		{CCES}
 		{High speed design: the 25+ Gbps challenge}
 		{}
 
 	\cvexpdatecompactitem
-		{Nov 2018}
+		{6, 8, 13 Nov 2018}
 		{EMC for automotive}
 		{EMC Solution}
 		{}
 	
 	\cvexpdatecompactitem
-		{Oct 2017}
+		{Oct 2017 (online)}
 		{Advanced Hardware Design}
 		{FEDEVEL~Academy}
 		{}
 	
 	\cvexpdatecompactitem
-		{Jun 2017}
+		{12--16 Jun 2017}
 		{Accelerator Power Electronics Engineering}
 		{US Particle Accelerator School}
 		{The course was concluded with an exam graded \emph{excellent}.}
 	
 	\cvexpdatecompactitem
-		{Jun 2017}
+		{19--23 Jun 2017}
 		{Pulsed Power Engineering}
 		{US Particle Accelerator School}
 		{The course was concluded with an exam graded \emph{outstanding}.}
 	
 	\cvexpdatecompactitem
-		{Dec 2016}
+		{Dec 2016 (online)}
 		{Learn Altium Essentials}
 		{FEDEVEL~Academy}
 		{}
 	
 	\cvexpdatecompactitem
-		{Apr 2016}
+		{28--29 Apr 2016}
 		{PCB design at RF --- multi-Gigabit transmission, EMI control and PCB materials}
 		{Cadence}
 		{}
 		
 	\cvexpdatecompactitem
-		{Apr 2016}
+		{25--27 Apr 2016}
 		{Essential high-speed PCB design for signal integrity}
 		{Cadence}
 		{}
-		
-	\section{Recent publications}
-	\cvartitem
-		{IPAC 2017}
-		{M.P. Kopeć et~al.}
-		{Universal digital aggregator for in-line signal processing}
-	
-	\cvartitem
-		{IPAC 2017}
-		{A.I. Wawrzyniak et~al.}
-		{Performance of Solaris storage ring}
 
-	\cvartitem
-		{IPAC 2017}
-		{A. Kisiel et~al.}
-		{Beta function measurement in the Solaris storage ring}
+	%\section{Publications}
+	\nocite{*}
+	\printbibliography[title={Publications}]
+	%\bibliographystyle{abbrv}
+	%\bibliography{cvbib}
 		
 	\section{Languages}
 	\cvartitem{English}{Fluent}{FCE passed in 2007}
