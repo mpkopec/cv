@@ -4,6 +4,7 @@
 %% Character encoding
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{svg}
 
 \usepackage{biblatex}
 \addbibresource{cvbib.bib}
@@ -21,10 +22,13 @@
 % URLs
 \usepackage{hyperref}
 \hypersetup{
-	colorlinks,
+	colorlinks=false,
 	linkcolor=black,
+	linkbordercolor=black,
 	citecolor=black,
-	urlcolor=black
+	urlcolor=black,
+	urlbordercolor=black,
+	pdfborderstyle={/S/U/W 1}
 }
 
 % Japanese
@@ -54,7 +58,7 @@
 
 % CV commands
 \newcommand{\cvedudateitem}[6]{
-	
+
 	\noindent
 	\begin{minipage}[t]{0.22\linewidth}
 		#1
@@ -74,7 +78,7 @@
 }
 
 \newcommand{\cvexpdateslimitem}[3]{
-	
+
 	\noindent
 	\begin{minipage}[t]{0.22\linewidth}
 		#1
@@ -86,13 +90,13 @@
 		\end{flushleft}
 	\end{minipage}
 	\vspace{.5\baselineskip}
-	
+
 }
 
 \newcommand{\cvexpdateitem}[4]{
 \ifthenelse{\isempty{#4}}
 		{\cvexpdateslimitem{#1}{#2}{#3}}{
-			
+
 		\noindent
 		\begin{minipage}[t]{0.21\linewidth}
 			#1
@@ -103,7 +107,7 @@
 				{\bfseries #2} | #3
 			\end{flushleft}
 		\end{minipage}
-		
+
 		\vspace{0.35\baselineskip}
 		\hfill{\vrule width 1pt}\hfill
 		\begin{minipage}[t]{.92\linewidth}
@@ -115,7 +119,7 @@
 \newcommand{\cvexpdatecompactitem}[4]{
 	\ifthenelse{\isempty{#4}}
 		{\cvexpdateslimitem{#1}{#2}{#3}}{
-			
+
 		\noindent
 		\begin{minipage}[t]{0.21\linewidth}
 			#1
@@ -124,7 +128,7 @@
 		\begin{minipage}[t]{0.766\linewidth}
 			{\bfseries #2} | #3
 		\end{minipage}
-		
+
 		\vspace{0.35\baselineskip}
 		\hfill{\vrule width 1pt}\hfill
 		\begin{minipage}[t]{.92\linewidth}
@@ -134,7 +138,7 @@
 }}
 
 \newcommand{\cvartitem}[3]{
-	
+
 	\noindent
 	\begin{minipage}[t]{0.21\linewidth}
 		#1
@@ -147,7 +151,7 @@
 }
 
 \newcommand{\cvskillsitem}[2]{
-	
+
 	\noindent
 	\begin{minipage}{0.21\linewidth}
 		\begin{flushleft}
@@ -156,7 +160,7 @@
 	\end{minipage}
 	\hfill
 	\begin{minipage}{0.766\linewidth}
-		
+
 		\begin{flushleft}
 			#2
 		\end{flushleft}
@@ -175,9 +179,10 @@
 
 \newcommand{\address}{Na Popielówkę 75P/2, 32-087 Zielonki, Poland}
 \newcommand{\mobile}{+48 515 083 938}
-\newcommand{\email}{maciej.p.kopec [at] gmail.com}
+\newcommand{\email}{\href{mailto:maciej.p.kopec@gmail.com}{maciej.p.kopec@gmail.com}}
 \newcommand{\github}{\href{https://github.com/mpkopec}{mpkopec}}
 \newcommand{\linkedin}{\href{https://www.linkedin.com/in/maciej-kope\%C4\%87-46735595/}{Maciej Kopeć}}
+\newcommand{\orcid}{\href{https://orcid.org/0000-0002-1892-0417}{Maciej P. Kopeć}}
 
 %%------------------------------------------------------------------------------
 %% Content
@@ -189,33 +194,35 @@
 		{\Huge \firstname \space \bfseries \familyname \normalfont, MSc}
 		\vspace{1\baselineskip}
 		%\twhorline{1pt}
-		
+
 		% Printing job title list
 		\large
 		\renewcommand*{\do}[1]{$\bullet$ #1 }
 		\dolistcsloop{JobTitleList}$\bullet$
 		\vspace{0.2\baselineskip}
 		\twhorline{1pt}
-		
+
 		% Contact info
 		\vspace{0.25\baselineskip}
 		\includegraphics[height=0.8em]{img/icons8-home-96.png}
 		\address \space |
 		\includegraphics[height=0.8em]{img/icons8-envelope-96.png}
-		\email \\
-		
+		\email \\[.3em]
+
 		\includegraphics[height=0.8em]{img/icons8-iphone-96.png}
 		\mobile \space |
 		\includegraphics[height=0.8em]{img/icons8-github-96.png}
 		\github \space |
 		\includegraphics[height=0.8em]{img/icons8-linkedin-96.png}
-		\linkedin
-		
+		\linkedin \space |
+		\includegraphics[height=0.8em]{img/orcid-128.png}
+		\orcid
+
 		\twhorline{1pt}
-		
+
 	\end{center}
-	
-	\section{Education}	
+
+	\section{Education}
 	\cvedudateitem
 		{Mar 2014 -- Sep 2015}
 		{Technical Physics}
@@ -230,7 +237,7 @@
 		{AGH-UST}
 		{Bachelor of Science}
 		{Demo application for colour touchscreen working in~embedded system}
-		
+
 	\section{Work experience}
 
 	For more detailed information about my experience (detailed job
@@ -247,59 +254,59 @@
 		{Apr 2019 -- present}
 		{Electronics Engineer}
 		{Merit Poland~sp.~z~o.o.}
-		
+
 	\cvexpdateslimitem
 		{Jan 2018 -- Mar 2019}
 		{Electronics Engineer}
 		{Merit Poland sp.~z~o.o. as Sii Poland's contractor}
-		
+
 	\cvexpdateslimitem
 		{Dec 2014 -- Dec 2017}
 		{Beam diagnostics and Instrumentation Specialist}
 		{National Synchrotron Radiation Centre `Solaris'}
-	
+
 	\cvexpdateslimitem
 		{May 2016 -- Aug 2016}
 		{Embedded systems developer}
 		{Conseil Européen pour la Recherche Nucléaire~(CERN)}
-	
+
 	\cvexpdateslimitem
 		{Jan 2014 -- Jun 2014}
 		{Hardware development intern}
 		{Woodward Poland~sp.~z~o.o.}
-	
+
 	\cvexpdateslimitem
 		{Jul 2013 -- Aug 2013}
 		{Electrical engineering trainee}
 		{Faculty of~Physics	and~Applied Computer Science}
-	
+
 	\cvexpdateslimitem
 		{2008 -- 2013}
 		{Web-developer, freelancer}
 		{Back-end and front-end web development}
-	
+
 	\section{Skills}
 	\cvskillsitem
 	{Programming\\languages}
 	{C, Python, Verilog, SQL (basic), MATLAB (basic),
 	Bash}
-	
+
 	\cvskillsitem
 	{Design\\software}
 	{KiCad, Altium Designer, Mentor Xpedition, LTspice IV, Simulink (basic), Xilinx
 	Vivado, Xilinx Vitis (basic), Eclipse}
-	
+
 	\cvskillsitem
 	{Other technologies}
 	{Linux, \LaTeX, git, Wordpress, MS Office, Vim}
-	
+
 	\cvskillsitem
 	{Additional qualifications}
-	{SEP 1\hspace{3pt}kV~license (30\hspace{3pt}kV for laboratory testing), 
-	driving license, good knowledge of~circuits and~signals theory, 
+	{SEP 1\hspace{3pt}kV~license (30\hspace{3pt}kV for laboratory testing),
+	driving license, good knowledge of~circuits and~signals theory,
 	analytical thinking}
-	
-	\section{Courses and certificates}	
+
+	\section{Courses and certificates}
 	\cvexpdatecompactitem
 		{20 Feb 2020}
 		{CCES}
@@ -311,37 +318,37 @@
 		{EMC for automotive}
 		{EMC Solution}
 		{}
-	
+
 	\cvexpdatecompactitem
 		{Oct 2017 (online)}
 		{Advanced Hardware Design}
 		{FEDEVEL~Academy}
 		{}
-	
+
 	\cvexpdatecompactitem
 		{12--16 Jun 2017}
 		{Accelerator Power Electronics Engineering}
 		{US Particle Accelerator School}
 		{The course was concluded with an exam graded \emph{excellent}.}
-	
+
 	\cvexpdatecompactitem
 		{19--23 Jun 2017}
 		{Pulsed Power Engineering}
 		{US Particle Accelerator School}
 		{The course was concluded with an exam graded \emph{outstanding}.}
-	
+
 	\cvexpdatecompactitem
 		{Dec 2016 (online)}
 		{Learn Altium Essentials}
 		{FEDEVEL~Academy}
 		{}
-	
+
 	\cvexpdatecompactitem
 		{28--29 Apr 2016}
 		{PCB design at RF --- multi-Gigabit transmission, EMI control and PCB materials}
 		{Cadence}
 		{}
-		
+
 	\cvexpdatecompactitem
 		{25--27 Apr 2016}
 		{Essential high-speed PCB design for signal integrity}
@@ -353,19 +360,19 @@
 	\printbibliography[title={Publications}]
 	%\bibliographystyle{abbrv}
 	%\bibliography{cvbib}
-		
+
 	\section{Languages}
 	\cvartitem{English}{Fluent}{FCE passed in 2007}
 	\cvartitem{Russian}{Basic}{}
 	\cvartitem{Japanese}{Pre-intermediate}{currently learning}
-	
+
 	\section{Disclaimer}
-	I~agree to~the~processing of~personal data provided in~this document 
-	for~realising the~recruitment process pursuant to~the~Personal Data Protection Act 
-	of~10~May~2018 (Journal of Laws 2018, item 1000) and~in~agreement 
-	with~Regulation (EU) 2016/679 of~the~European Parliament and~of~the~Council of~27~April~2016 
-	on~the~protection of~natural persons with regard to~the~processing 
-	of~personal data and~on~the~free movement of~such data, and~repealing Directive 
+	I~agree to~the~processing of~personal data provided in~this document
+	for~realising the~recruitment process pursuant to~the~Personal Data Protection Act
+	of~10~May~2018 (Journal of Laws 2018, item 1000) and~in~agreement
+	with~Regulation (EU) 2016/679 of~the~European Parliament and~of~the~Council of~27~April~2016
+	on~the~protection of~natural persons with regard to~the~processing
+	of~personal data and~on~the~free movement of~such data, and~repealing Directive
 	95/46/EC (General Data Protection Regulation).
-	
+
 \end{document}
